@@ -14,7 +14,11 @@
       specialArgs = attrs // { hardwarePath = ./hardware/jlewis-laptop.nix; };
       modules = [
         ./system.nix
-        attrs.home-manager.nixosModules.home-manager ./home.nix
+        attrs.home-manager.nixosModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.jlewis = import ./home.nix;
+        }
       ];
     };
   };

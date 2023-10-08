@@ -1,21 +1,7 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
- 
-{ config, pkgs, hyprland, hardwarePath, ... }:
 
-{
-  imports =
-    [
-      hardwarePath
-    ];
+{ config, pkgs, hyprland, hardwarePath, ... }: {
+  imports = [ hardwarePath ];
 
-  nixpkgs.overlays =
-    [
-      # hyprland.overlays.hyprland-packages
-    ];
-
-  # binary cache
   nix = {
     extraOptions = ''
       experimental-features = nix-command flakes
@@ -98,36 +84,6 @@
       isNormalUser = true;
       description = "John Lewis";
       extraGroups = [ "networkmanager" "wheel" "docker" ];
-      packages = with pkgs; [
-        # browser
-        firefox chromium
-  
-        # terminal
-        alacritty iosevka 
-
-        # hyprland
-          # xdg-desktop-portal-hyprland # portal backend
-          dunst # notifications
-          # polkit_gnome # polkit
-          hyprpaper # wallpaper
-          rofi # app launcher
-  
-        # terminal utils
-        zellij btop bacon typer just speedtest-cli neofetch iwd gitui tiny
-  
-        # zsh
-        pure-prompt zsh-syntax-highlighting
-  
-        # other apps
-        discord github-desktop obsidian rpi-imager spotify obs-studio zoom-us
-        qdirstat vlc
-  
-        # games
-        mars
-  
-        # network
-        protonvpn-cli qbittorrent
-      ];
     };
   };
 
@@ -163,8 +119,6 @@
     "NIXOS_OZONE_WL" = "1";
     # this is to fix cursor icons for some wayland apps
     "XCURSOR_THEME" = "Adwaita";
-    # # this is to tell tree where to find my git config
-    # "GIT_DIR" = "/home/jlewis/.config/git";
   };
 
   environment.shellAliases = {
@@ -175,16 +129,7 @@
     nd = "nix develop --command $SHELL";
   };
 
-  # use ZSH instead of BASH
-  programs.zsh = {
-    enable = true;
-    histSize = 3000;
-    ohMyZsh = {
-      enable = true;
-      plugins = [ "nix-shell" ];
-      custom = "/home/jlewis/.config/ohmyzsh_custom";
-    };
-  };
+  programs.zsh.enable = true;
 
   # configure Hyprland
   programs.hyprland = {
@@ -198,21 +143,11 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
-  # configure direnv
-  programs.direnv.enable = true;
-
-  # List services that you want to enable:
-
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  # Start the docker daemon.
   virtualisation.docker.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
