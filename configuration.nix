@@ -2,13 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
  
-{ config, pkgs, hyprland, ... }:
+{ config, pkgs, hyprland, hardwarePath, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      # <home-manager/nixos>
+    [
+      hardwarePath
     ];
 
   nixpkgs.overlays =
@@ -114,7 +113,7 @@
           rofi # app launcher
   
         # terminal utils
-        zellij btop bacon typer just speedtest-cli neofetch iwd gitui
+        zellij btop bacon typer just speedtest-cli neofetch iwd gitui tiny
   
         # zsh
         pure-prompt zsh-syntax-highlighting
