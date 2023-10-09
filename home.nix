@@ -128,6 +128,42 @@
     enableZshIntegration = true;
   };
 
+  gtk = {
+    enable = true;
+
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
+
+    theme = {
+      name = "Nordic-darker-standard-buttons";
+      package = pkgs.nordic;
+    };
+
+    cursorTheme = {
+      name = "Numix-Cursor";
+      package = pkgs.numix-cursor-theme;
+    };
+
+    # gtk3.extraConfig = {
+    #   Settings = ''
+    #     gtk-application-prefer-dark-theme=1
+    #   '';
+    # };
+
+    # gtk4.extraConfig = {
+    #   Settings = ''
+    #     gtk-application-prefer-dark-theme=1
+    #   '';
+    # };
+
+    font.name = "Cantarell";
+    font.size = 11;
+  };
+
+  # home.sessionVariables.GTK_THEME = "Nordic";
+
   programs.helix = {
     enable = true;
     settings = {
