@@ -127,6 +127,63 @@
     enable = true;
     enableZshIntegration = true;
   };
+
+  programs.helix = {
+    enable = true;
+    settings = {
+      theme = "fleet_dark";
+
+      editor = {
+        line-number = "relative";
+        mouse = true;
+        rulers = [ 80 ];
+        bufferline = "always";
+        color-modes = true;
+        idle-timeout = 200;
+        text-width = 100;
+      
+        statusline = {
+          mode.normal = "NORMAL";
+          mode.insert = "INSERT";
+          mode.select = "SELECT";
+        };
+
+        lsp = {
+          display-messages = true;
+          display-inlay-hints = true;
+        };
+
+        cursor-shape = {
+          insert = "bar";
+          normal = "block";
+          select = "underline";
+        };
+
+        file-picker = {
+          hidden = false;
+        };
+
+        auto-pairs = {
+          "<" = ">";
+        };
+      };
+
+      keys.insert = {
+        "S-tab" = "unindent";
+      };
+    };
+
+    languages.language = [
+      {
+        name = "rust";
+        auto-format = true;
+        formatter = {
+          command = "cargo fmt";
+        };
+      }
+    ];
+      
+  };
   
   home.stateVersion = "23.05";
 
