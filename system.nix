@@ -96,7 +96,7 @@
     users.jlewis = {
       isNormalUser = true;
       description = "John Lewis";
-      extraGroups = [ "networkmanager" "wheel" "docker" ];
+      extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" ];
     };
   };
 
@@ -164,6 +164,7 @@
 
   # Start the docker daemon.
   virtualisation.docker.enable = true;
+  virtualisation.virtualbox.host.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

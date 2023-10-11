@@ -137,8 +137,8 @@
     };
 
     theme = {
-      name = "Nordic-darker-standard-buttons";
-      package = pkgs.nordic;
+      name = "Orchis";
+      package = pkgs.orchis-theme;
     };
 
     cursorTheme = {
@@ -146,23 +146,45 @@
       package = pkgs.numix-cursor-theme;
     };
 
-    # gtk3.extraConfig = {
-    #   Settings = ''
-    #     gtk-application-prefer-dark-theme=1
-    #   '';
-    # };
+    gtk3.extraConfig = {
+      Settings = ''
+        gtk-application-prefer-dark-theme=1
+      '';
+    };
 
-    # gtk4.extraConfig = {
-    #   Settings = ''
-    #     gtk-application-prefer-dark-theme=1
-    #   '';
-    # };
+    gtk4.extraConfig = {
+      Settings = ''
+        gtk-application-prefer-dark-theme=1
+      '';
+    };
 
     font.name = "Cantarell";
     font.size = 11;
   };
 
-  # home.sessionVariables.GTK_THEME = "Nordic";
+  home.sessionVariables.GTK_THEME = "Orchis";
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      "font-antialiasing" = "rgba";
+      "enable-hot-corners" = false;
+      "show-battery-percentage" = true;
+    };
+    "org/gnome/desktop/peripherals/touchpad" = {
+      "tap-to-click" = true;
+    };
+    "org/gnome/mutter" = {
+      "edge-tiling" = true;
+    };
+    "org/gnome/settings-daemon/plugins/power" = {
+      "idle-dim" = false;
+      "idle-delay" = 0;
+      "power-saver-profile-on-low-battery" = false;
+      "sleep-inactive-battery-type" = "suspend";
+      "sleep-inactive-battery-timeout" = 1800;
+      "sleep-inactive-ac-type" = "nothing";
+      "power-button-action" = "interactive";
+    };
+  };
 
   programs.helix = {
     enable = true;
