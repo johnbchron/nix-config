@@ -1,0 +1,109 @@
+
+# Interface
+"ui.background" = { bg = "background" }
+"ui.window" = { fg = "foreground" }
+"special" = "tertiary" # file picker fuzzy match
+"ui.background.separator" = { fg = "light_background" }
+"ui.text" = "foreground"
+"ui.text.inactive" = "comment"
+"ui.text.focus" = { modifiers = ["reversed"] } # file picker selected
+
+"ui.virtual" = "comment"
+"ui.virtual.whitespace" = "comment"
+"ui.virtual.ruler" = { bg = "light_background" }
+"ui.virtual.indent-guide" = "comment"
+"ui.virtual.inlay-hint" = { fg = "comment", bg = "background" }
+"ui.virtual.inlay-hint.parameter" = { fg = "comment", bg = "background" }
+"ui.virtual.inlay-hint.type" = { fg = "comment", bg = "background" }
+"ui.virtual.wrap" = "comment"
+
+"ui.statusline" = { fg = "foreground", bg = "light_background" }
+"ui.statusline.inactive" = { fg = "foreground", bg = "light_background" }
+"ui.statusline.normal" = { fg = "background", bg = "foreground" }
+"ui.statusline.insert" = { fg = "background", bg = "primary" }
+"ui.statusline.select" = { fg = "background", bg = "secondary" }
+"ui.statusline.separator" = { fg = "foreground", bg = "light_background" }
+
+"ui.cursor" = { fg = "background", bg = "foreground" }
+"ui.cursor.insert" = { fg = "background", bg = "foreground" }
+"ui.cursor.select" = { fg = "background", bg = "foreground" }
+"ui.cursor.match" = { modifiers = ["reversed"] }
+"ui.cursor.primary" = { modifiers = ["reversed"] }
+"ui.cursor.secondary" = "comment"
+"ui.cursorline.primary" = { bg = "comment", underline = { color = "background", style = "double_line" } }
+"ui.cursorline.secondary" = { bg = "selection", underline = { color = "comment", style = "line" } }
+"ui.selection" = { bg = "selection" }
+# "ui.selection.primary" = { fg = "comment", bg = "comment" }
+
+"ui.menu" = { fg = "foreground", bg = "light_background" }
+"ui.menu.selected" = { modifiers = ["reversed"] }
+"ui.menu.scroll" = { fg = "foreground", bg = "background" }
+"ui.help" = { fg = "foreground", bg = "light_background" }
+
+"ui.popup" = { bg = "light_background" }
+"ui.popup.info" = { fg = "foreground", bg = "light_background" }
+
+"ui.gutter" = { bg = "background" }
+"ui.gutter.selected" = { bg = "background" }
+"ui.linenr" = { fg = "comment", bg = "background" }
+"ui.linenr.selected" = { fg = "foreground", bg = "background", modifiers = ["bold"] }
+
+# Diagnostic
+"diagnostic" = { fg = "comment" }
+"diagnostic.info" = { underline = { color = "comment", style = "dotted" } }
+"diagnostic.hint" = { underline = { color = "quinary", style = "dashed" } }
+"diagnostic.warning" = { underline = { color = "tertiary", style = "curl" } }
+"diagnostic.error" = { underline = { color = "senary", style = "curl" } }
+"info" = "comment" 
+"hint" = "tertiary"
+"warning" = "background"
+"error" = "senary"
+"debug" = "senary"
+
+"diff.plus" = "secondary"
+"diff.delta" ="primary"
+"diff.minus" = "quaternary"
+
+# Syntax high light
+"type" = "quinary"
+"type.buildin" = "quinary"
+"comment" = "comment"
+"operator" = "primary"
+"variable" = "foreground"
+"variable.other.member" = "secondary"
+"constant" = "senary"
+"constant.numeric" = "quinary"
+"attributes" = "primary"
+"namespace" = "primary"
+"string" = "secondary"
+"string.special.url" = "secondary"
+"constant.character.escape" = "tertiary"
+"constructor" = "quinary"
+"keyword" = "primary"
+"keyword.control" = "primary"
+"function" = "tertiary"
+"label" = "primary"
+
+# Markup 
+"markup.heading" = { fg = "tertiary", modifiers = ["bold"], underline = { color = "tertiary", style = "double_line"} }
+"markup.list" = "quaternary"
+"markup.bold" = { fg = "quinary", modifiers = ["bold"] }
+"markup.italic" = { fg = "primary", modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "primary", underline = { color = "primary", style = "line" } }
+"markup.link.text" = "quaternary"
+"markup.quote" = "tertiary"
+"markup.raw" = "secondary"
+
+[palette]
+background = "#15141b"
+light_background = "#262430"
+comment = "#6d6d6d"
+primary = "#a277ff"
+selection = "#3d375e7f"
+foreground = "#edecee"
+senary = "#ff6767"
+quaternary = "#f694ff"
+secondary = "#61ffca"
+tertiary = "#ffca85"
+quinary = "#82e2ff"
