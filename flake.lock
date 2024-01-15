@@ -3,17 +3,15 @@
     "apple-silicon-support": {
       "inputs": {
         "flake-compat": "flake-compat",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
+        "nixpkgs": "nixpkgs",
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1700436815,
-        "narHash": "sha256-+txRDmFuI/dW/ZmacfDrqSsKiWTNLmRygej25u2ojNM=",
+        "lastModified": 1703450140,
+        "narHash": "sha256-ZNNcuLJAjJbkRlU/53KKOgs1xI+y/LXWBdBukbm3hxY=",
         "owner": "tpwrules",
         "repo": "nixos-apple-silicon",
-        "rev": "14b327ca47703c376ebb82ba16dc42ca2baa57d8",
+        "rev": "9f81761270e6343d00b99d3e07e1feee8f3ba4b5",
         "type": "github"
       },
       "original": {
@@ -32,11 +30,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-Fl6rwspjNbCRNzAbbG/FdeSlDFCuuj9971nIbDDrRLQ=",
-        "path": "/nix/store/0m5q194l72dfbd7zraxrg1x72jcnwf9x-source/copilot-wrapped",
+        "path": "/nix/store/790s0hgbcb5xabrcnf4ry31whgnzfz2y-source/copilot-wrapped",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/0m5q194l72dfbd7zraxrg1x72jcnwf9x-source/copilot-wrapped",
+        "path": "/nix/store/790s0hgbcb5xabrcnf4ry31whgnzfz2y-source/copilot-wrapped",
         "type": "path"
       }
     },
@@ -140,9 +138,7 @@
       "inputs": {
         "crane": "crane",
         "flake-utils": "flake-utils_2",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
+        "nixpkgs": "nixpkgs_2",
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
@@ -167,11 +163,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1700695018,
-        "narHash": "sha256-MAiPLgBF4GLzSOlhnPCDWkWW5CDx4i7ApIYaR+TwTVg=",
+        "lastModified": 1703838268,
+        "narHash": "sha256-SRg5nXcdPnrsQR2MTAp7en0NyJnQ2wB1ivmsgEbvN+o=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "134deb46abd5d0889d913b8509413f6f38b0811e",
+        "rev": "2aff324cf65f5f98f89d878c056b779466b17db8",
         "type": "github"
       },
       "original": {
@@ -182,11 +178,43 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1700538105,
-        "narHash": "sha256-uZhOCmwv8VupEmPZm3erbr9XXmyg7K67Ul3+Rx2XMe0=",
+        "lastModified": 1703255338,
+        "narHash": "sha256-Z6wfYJQKmDN9xciTwU3cOiOk+NElxdZwy/FiHctCzjU=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "6df37dc6a77654682fe9f071c62b4242b5342e04",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "6df37dc6a77654682fe9f071c62b4242b5342e04",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1704194953,
+        "narHash": "sha256-RtDKd8Mynhe5CFnVT8s0/0yqtWFMM9LmCzXv/YKxnq4=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "bd645e8668ec6612439a9ee7e71f7eac4099d4f6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1704161960,
+        "narHash": "sha256-QGua89Pmq+FBAro8NriTuoO/wNaUtugt29/qqA8zeeM=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "51a01a7e5515b469886c120e38db325c96694c2f",
+        "rev": "63143ac2c9186be6d9da6035fa22620018c85932",
         "type": "github"
       },
       "original": {
@@ -202,7 +230,7 @@
         "copilot-wrapped": "copilot-wrapped",
         "helix-fork": "helix-fork",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs_3"
       }
     },
     "rust-overlay": {

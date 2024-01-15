@@ -28,20 +28,23 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
+  boot.binfmt.emulatedSystems = [ "x86_64-linux" ];
 
   # Asahi hardware-specific
-  hardware.asahi.peripheralFirmwareDirectory = ./firmware;
-  hardware.asahi.experimentalGPUInstallMode = "replace";
-  hardware.asahi.useExperimentalGPUDriver = true;
-  hardware.asahi.addEdgeKernelConfig = true;
-  hardware.asahi.setupAlsaUcm = true;
-  hardware.asahi.withRust = true;
+  hardware.asahi = {
+    withRust = true;
+    addEdgeKernelConfig = true;
+    useExperimentalGPUDriver = true;
+    experimentalGPUInstallMode = "replace";
+    setupAsahiSound = true;
+  };
 
   hardware.opengl.enable = true;
   hardware.opengl.package = pkgs.lib.mkForce pkgs.mesa-asahi-edge.drivers;
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.wireless.iwd.enable = true;
   networking.hostName = "gimli"; # Define your hostname.
 
   # Set your time zone.
@@ -73,7 +76,7 @@
     gnome-tour
   ]) ++ (with pkgs.gnome; [
     gnome-music
-    gedit # text editor
+    # gedit # text editor
     epiphany # web browser
     geary # email reader
     gnome-characters
@@ -115,9 +118,11 @@
 
   nixpkgs.config = {
     permittedInsecurePackages = [
-      "openssl-1.1.1v" "openssl-1.1.1w"
+      "electron-25.9.0"
     ];
-    allowUnfree = true;
+    allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+       "obsidian" "steam" "steam-original" "steam-runtime" "steam-run"
+     ];
   };
 
   # List packages installed in system profile. To search, run:
@@ -127,7 +132,7 @@
     wget curl git tree file unzip gzip
 
     # fancy shell utils
-    fzf btop bat
+    fzf btop bat eza
 
     # proxies and such
     cloudflared # used to proxy ssh
@@ -159,23 +164,23 @@
 
   programs.zsh.enable = true;
 
-  # configure Hyprland
-  #programs.hyprland = {
-  #  enable = true;
-  #};
+  # # configure steam
+  # programs.steam = {
+  #   enable = true;
+  #   remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  #   dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  # };
 
-  # configure steam
-  #programs.steam = {
-  #  enable = true;
-  #  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-  #  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  #};
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
   # Start the docker daemon.
-  #virtualisation.docker.enable = true;
+  virtualisation.docker.enable = true;
   #virtualisation.virtualbox.host.enable = true;
 
   # This value determines the NixOS release from which the default

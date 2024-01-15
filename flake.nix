@@ -4,17 +4,14 @@
 
     apple-silicon-support = {
       url = "github:tpwrules/nixos-apple-silicon";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # hyprland.url = "github:hyprwm/Hyprland";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     helix-fork = {
       url = "github:AlexanderDickie/helix/copilot";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     copilot-wrapped = {
       url = "./copilot-wrapped";
