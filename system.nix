@@ -44,7 +44,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.wireless.iwd.enable = true;
+  # networking.wireless.iwd.enable = true;
   networking.hostName = "gimli"; # Define your hostname.
 
   # Set your time zone.
@@ -152,6 +152,7 @@
     "NIXOS_OZONE_WL" = "1";
     # this is to fix cursor icons for some wayland apps
     "XCURSOR_THEME" = "Adwaita";
+    "GLOBAL_LIBGL" = "${pkgs.lib.makeLibraryPath [ pkgs.libGL ]}";
   };
 
   environment.shellAliases = {

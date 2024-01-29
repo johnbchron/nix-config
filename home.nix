@@ -33,6 +33,7 @@
     #/ zoom-us
     qdirstat
     vlc
+    fstl
 
     # games
     mars
@@ -52,6 +53,7 @@
       nd = "nix develop --command $SHELL";
       ls = "eza";
       l = "eza -alh";
+      with-rust = "nix develop \"/home/jlewis/github/with-rust\" --command $SHELL";
     };
     sessionVariables = {
       "VISUAL" = "${helix-fork.packages.aarch64-linux.default}";
@@ -228,7 +230,7 @@
       "show-battery-percentage" = true;
     };
     "org/gnome/desktop/peripherals/touchpad" = {
-      "tap-to-click" = true;
+      "tap-to-click" = false;
       "natural-scroll" = false;
     };
     "org/gnome/mutter" = {
@@ -255,9 +257,13 @@
 
   gtk = {
     enable = true;
+    # theme = {
+    #   package = pkgs.flat-remix-gtk;
+    #   name = "Flat-Remix-GTK-Grey-Darkest";
+    # };
     theme = {
-      package = pkgs.flat-remix-gtk;
-      name = "Flat-Remix-GTK-Grey-Darkest";
+      name = "palenight";
+      package = pkgs.palenight-theme;
     };
     iconTheme = {
       package = pkgs.gnome.adwaita-icon-theme;
