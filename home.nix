@@ -35,6 +35,9 @@
     vlc
     fstl
 
+    # for gpg signing
+    pinentry-gnome
+
     # games
     mars
 
@@ -56,8 +59,8 @@
       with-rust = "nix develop \"/home/jlewis/github/with-rust\" --command $SHELL";
     };
     sessionVariables = {
-      "VISUAL" = "${helix-fork.packages.aarch64-linux.default}";
-      "EDITOR" = "${helix-fork.packages.aarch64-linux.default}";
+      "VISUAL" = "${helix-fork.packages.aarch64-linux.default}/bin/hx";
+      "EDITOR" = "${helix-fork.packages.aarch64-linux.default}/bin/hx";
     };
     oh-my-zsh = {
       enable = true;
@@ -81,7 +84,7 @@
       window = {
         opacity = 1.0;
         # startup_mode = "Fullscreen";
-        option_as_alt = "Both";
+        # option_as_alt = "Both";
       };
       
       font = {
@@ -137,10 +140,6 @@
           focused_match = {
             foreground = "#1E1E2E"; # base
             background = "#A6E3A1"; # green
-          };
-          footer_bar = {
-            foreground = "#1E1E2E"; # base
-            background = "#A6ADC8"; # subtext0
           };
         };
 
@@ -253,6 +252,21 @@
     ignores = [ ".direnv" "result" ];
     userName = "John Lewis";
     userEmail = "github@jlewis.sh";
+
+    signing = {
+      signByDefault = true;
+      key = "0x89C8A7794A74A0AB";
+    };
+  };
+
+  programs.gpg = {
+    enable = true;
+  };
+
+  services.gpg-agent = {
+    enable = true;
+    pinentryFlavor = "gnome3";
+    enableSshSupport = true;
   };
 
   gtk = {
