@@ -108,7 +108,7 @@
           style = "Bold";
         };
 
-        size = 14;
+        size = 16;
       };
 
       # catppuccin theme
