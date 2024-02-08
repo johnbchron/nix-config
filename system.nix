@@ -139,6 +139,7 @@
 
     # gnome stuff
     gnome.gnome-tweaks
+    gnomeExtensions.desktop-cube
   ];
 
   # add zsh to /etc/shells

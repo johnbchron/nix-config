@@ -13,13 +13,10 @@
     # global language servers
     nil vscode-langservers-extracted
 
-    # # hyprland
-    #   # xdg-desktop-portal-hyprland # portal backend
+    # hyprland
     dunst # notifications
-    #   # polkit_gnome # polkit
-    #   hyprpaper # wallpaper
     rofi # app launcher
-    iwgtk
+    iwgtk # networking
 
     # terminal utils
     typer just speedtest-cli neofetch gitui uair
@@ -33,10 +30,13 @@
     #/ zoom-us
     qdirstat
     vlc
-    fstl
+    fstl # viewing stl files
 
     # for gpg signing
     pinentry-gnome
+
+    # dconf
+    gnome.dconf-editor
 
     # games
     mars
@@ -108,7 +108,7 @@
           style = "Bold";
         };
 
-        size = 16;
+        size = 13;
       };
 
       # catppuccin theme
@@ -223,16 +223,21 @@
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
+      "clock-format" = "12h";
+      "clock-show-date" = true;
+      "clock-show-weekday" = true;
+      "color-scheme" = "prefer-dark";
       "font-antialiasing" = "rgba";
       "enable-hot-corners" = false;
-      "color-scheme" = "prefer-dark";
       "show-battery-percentage" = true;
     };
     "org/gnome/desktop/peripherals/touchpad" = {
+      "accel-profile" = "adaptive";
       "tap-to-click" = false;
       "natural-scroll" = false;
     };
     "org/gnome/mutter" = {
+      "dynamic-workspaces" = true;
       "edge-tiling" = true;
       "experimental-features" = [ "scale-monitor-framebuffer" ];
     };
@@ -245,6 +250,11 @@
       "sleep-inactive-ac-type" = "nothing";
       "power-button-action" = "interactive";
     };
+    "org/gnome/desktop/screensaver" = {
+      "color-shading-type" = "solid";
+      "picture-options" = "zoom";
+      "picture-uri" = "file:///home/jlewis/.local/share/backgrounds/2024-02-06-09-55-19-pexels-eberhard-grossgasteiger-640781.jpg";
+    };
   };
 
   programs.git = {
@@ -254,7 +264,7 @@
     userEmail = "github@jlewis.sh";
 
     signing = {
-      signByDefault = true;
+      # signByDefault = true;
       key = "0x89C8A7794A74A0AB";
     };
   };
