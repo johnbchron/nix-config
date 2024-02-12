@@ -255,6 +255,16 @@
       "picture-options" = "zoom";
       "picture-uri" = "file:///home/jlewis/.local/share/backgrounds/2024-02-06-09-55-19-pexels-eberhard-grossgasteiger-640781.jpg";
     };
+    "org/gnome/shell/keybindings" = {
+      "show-screenshot-ui" = [ "<Super>s" ];
+    };
+    "org/gnome/wm/keybindings" = {
+      "switch-applications" = [ "<Super>Tab" ];
+      "switch-windows" = [ "<Alt>Tab" ];
+      "toggle-quick-settings" = [];
+      "close" = [ "<Super>q" ];
+      "toggle-fullscreen" = [ "<Super>f" ];
+    };
   };
 
   programs.git = {
