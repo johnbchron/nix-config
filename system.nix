@@ -30,6 +30,11 @@
   boot.loader.efi.canTouchEfiVariables = false;
   boot.binfmt.emulatedSystems = [ "x86_64-linux" ];
 
+  # console = {
+  #   font = "iosevka-bold";
+  #   packages = [ pkgs.iosevka ];
+  # };
+
   # Asahi hardware-specific
   hardware.asahi = {
     withRust = true;
@@ -134,6 +139,9 @@
     # fancy shell utils
     fzf btop bat eza
 
+    # fonts
+    iosevka
+
     # proxies and such
     cloudflared # used to proxy ssh
 
@@ -147,8 +155,8 @@
   # set /bin/sh to dash for speeeeeed
   environment.binsh = "${pkgs.dash}/bin/dash";
   environment.variables = {
-    "VISUAL" = "${pkgs.helix}";
-    "EDITOR" = "${pkgs.helix}";
+    "VISUAL" = "${pkgs.helix}/bin/hx";
+    "EDITOR" = "${pkgs.helix}/bin/hx";
     # this is to tell electron apps to use wayland, for hyprland
     "NIXOS_OZONE_WL" = "1";
     # this is to fix cursor icons for some wayland apps
@@ -157,11 +165,6 @@
   };
 
   environment.shellAliases = {
-    e = "exit";
-    clr = "clear";
-    snorbs = "sudo nixos-rebuild switch --flake '/etc/nixos#'";
-    treeg = "tree --gitignore";
-    nd = "nix develop --command $SHELL";
   };
 
   programs.zsh.enable = true;

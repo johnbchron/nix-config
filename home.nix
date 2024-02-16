@@ -277,6 +277,16 @@
       # signByDefault = true;
       key = "0x89C8A7794A74A0AB";
     };
+
+    extraConfig = {
+      init = {
+        defaultBranch = "main";
+      };
+      alias = {
+        lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
+        lga = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --branches";
+      };
+    };
   };
 
   programs.gpg = {
