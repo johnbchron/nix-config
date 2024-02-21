@@ -30,10 +30,17 @@
   boot.loader.efi.canTouchEfiVariables = false;
   boot.binfmt.emulatedSystems = [ "x86_64-linux" ];
 
-  # console = {
-  #   font = "iosevka-bold";
-  #   packages = [ pkgs.iosevka ];
-  # };
+  boot.kernelPatches = [
+    {
+      name = "asahi-uclamp";
+      patch = null;
+      extraConfig = ''
+        UCLAMP_BUCKETS_COUNT 5
+        UCLAMP_TASK_GROUP y
+        UCLAMP_TASK y
+      '';
+    }
+  ];
 
   # Asahi hardware-specific
   hardware.asahi = {
@@ -126,8 +133,13 @@
       "electron-25.9.0"
     ];
     allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
-       "obsidian" "steam" "steam-original" "steam-runtime" "steam-run"
-     ];
+      "obsidian" "steam" "steam-original" "steam-runtime" "steam-run"
+    ];
+    packageOverrides = super: let self = super.pkgs; in {
+      iosevka-term = self.iosevka.override {
+        "set" = "term";
+      };
+    };
   };
 
   # List packages installed in system profile. To search, run:

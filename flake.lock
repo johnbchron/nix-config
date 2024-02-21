@@ -7,15 +7,15 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1705557527,
-        "narHash": "sha256-DuxxHTQ/W5KToFLWG4FUF8hLldNo9eXlbt7JgvhrMnY=",
-        "owner": "tpwrules",
+        "lastModified": 1708285602,
+        "narHash": "sha256-dNntEhjf0gmLBjskBm7Nsreln4T+XyFc/dtcsI3VtrM=",
+        "owner": "oliverbestmann",
         "repo": "nixos-apple-silicon",
-        "rev": "6e324ab06cb27a19409ebc1dc2664bf1e585490a",
+        "rev": "31d8a82302a54c52545148e7c9d24b03645f03d9",
         "type": "github"
       },
       "original": {
-        "owner": "tpwrules",
+        "owner": "oliverbestmann",
         "repo": "nixos-apple-silicon",
         "type": "github"
       }
@@ -30,11 +30,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-Fl6rwspjNbCRNzAbbG/FdeSlDFCuuj9971nIbDDrRLQ=",
-        "path": "/nix/store/sbq1r7iv25kv0kygr2l8p34an55ikipx-source/copilot-wrapped",
+        "path": "/nix/store/i6ddqxnjz9ir2wdmjyif2m4wl18l1qpv-source/copilot-wrapped",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/sbq1r7iv25kv0kygr2l8p34an55ikipx-source/copilot-wrapped",
+        "path": "/nix/store/i6ddqxnjz9ir2wdmjyif2m4wl18l1qpv-source/copilot-wrapped",
         "type": "path"
       }
     },
@@ -210,11 +210,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1708001613,
-        "narHash": "sha256-woOmAXW05XnqlLn7dKzCkRAEOSOdA/Z2ndVvKcjid94=",
+        "lastModified": 1708151420,
+        "narHash": "sha256-MGT/4aGCWQPQiu6COqJdCj9kSpLPiShgbwpbC38YXC8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "085589047343aad800c4d305cf7b98e8a3d51ae2",
+        "rev": "6e2f00c83911461438301db0dba5281197fe4b3a",
         "type": "github"
       },
       "original": {
