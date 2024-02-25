@@ -51,8 +51,8 @@
     setupAsahiSound = true;
   };
 
-  hardware.opengl.enable = true;
-  hardware.opengl.package = pkgs.lib.mkForce pkgs.mesa-asahi-edge.drivers;
+  # hardware.opengl.enable = true;
+  # hardware.opengl.package = pkgs.lib.mkForce pkgs.mesa-asahi-edge.drivers;
 
   # Enable networking
   networking.networkmanager.enable = true;

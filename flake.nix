@@ -23,10 +23,11 @@
   outputs = { self, nixpkgs, home-manager, apple-silicon-support, ... }@inputs:
     let
       system = "aarch64-linux";
+      hardwarePath = ./hardware/gimli.nix;
     in {
       nixosConfigurations.gimli = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = inputs // { hardwarePath = ./hardware/gimli.nix; };
+        specialArgs = inputs // { inherit hardwarePath; };
         modules = [
           ./system.nix
           apple-silicon-support.nixosModules.default
