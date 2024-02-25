@@ -29,12 +29,12 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-Fl6rwspjNbCRNzAbbG/FdeSlDFCuuj9971nIbDDrRLQ=",
-        "path": "/nix/store/41gwxgycmrz2in0q1z6zirm5fs3irbw0-source/copilot-wrapped",
+        "narHash": "sha256-u0h5FdmIQ4/GrUm1PoKdJ2oit600/7nzTv65LgHlPNg=",
+        "path": "/nix/store/9fznxbk0s71l8qyy7b45g8x2is2jpsm1-source/copilot-wrapped",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/41gwxgycmrz2in0q1z6zirm5fs3irbw0-source/copilot-wrapped",
+        "path": "/nix/store/9fznxbk0s71l8qyy7b45g8x2is2jpsm1-source/copilot-wrapped",
         "type": "path"
       }
     },
