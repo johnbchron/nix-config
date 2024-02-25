@@ -35,7 +35,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.jlewis = import ./home.nix;
+              users.jlewis = import ./home/main.nix;
               extraSpecialArgs = inputs;
             };
           }

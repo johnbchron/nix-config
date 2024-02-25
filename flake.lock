@@ -30,11 +30,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-Fl6rwspjNbCRNzAbbG/FdeSlDFCuuj9971nIbDDrRLQ=",
-        "path": "/nix/store/yynkwz1x5i197vb65w3nqbr991d5npz2-source/copilot-wrapped",
+        "path": "/nix/store/41gwxgycmrz2in0q1z6zirm5fs3irbw0-source/copilot-wrapped",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/yynkwz1x5i197vb65w3nqbr991d5npz2-source/copilot-wrapped",
+        "path": "/nix/store/41gwxgycmrz2in0q1z6zirm5fs3irbw0-source/copilot-wrapped",
         "type": "path"
       }
     },
