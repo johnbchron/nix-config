@@ -15,22 +15,22 @@
       
       font = {
         normal = {
-          family = "Iosevka Term";
+          family = "Iosevka Custom";
           style = "Bold";
         };
 
         bold = {
-          family = "Iosevka Term";
+          family = "Iosevka Custom";
           style = "Bold";
         };
 
         italic = {
-          family = "Iosevka Term";
+          family = "Iosevka Custom";
           style = "Bold";
         };
 
         bold_italic = {
-          family = "Iosevka Term";
+          family = "Iosevka Custom";
           style = "Bold";
         };
 

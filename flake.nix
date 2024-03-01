@@ -3,8 +3,8 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     apple-silicon-support = {
-      # url = "github:tpwrules/nixos-apple-silicon";
-      url = "github:oliverbestmann/nixos-apple-silicon";
+      url = "github:tpwrules/nixos-apple-silicon";
+      # url = "github:oliverbestmann/nixos-apple-silicon";
     };
 
     home-manager = {

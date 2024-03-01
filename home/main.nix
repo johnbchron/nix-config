@@ -39,6 +39,7 @@
     qdirstat
     vlc
     fstl # viewing stl files
+    gimp
 
     # for gpg signing
     pinentry-gnome

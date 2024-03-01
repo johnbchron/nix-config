@@ -41,7 +41,6 @@
   # Asahi hardware-specific
   hardware.asahi = {
     withRust = true;
-    addEdgeKernelConfig = true;
     useExperimentalGPUDriver = true;
     experimentalGPUInstallMode = "replace";
     setupAsahiSound = true;
@@ -100,19 +99,6 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-  };
-
   # set up users
   users = {
     defaultUserShell = pkgs.zsh;
@@ -132,7 +118,40 @@
     ];
     packageOverrides = super: let self = super.pkgs; in {
       iosevka-term = self.iosevka.override {
-        "set" = "term";
+        privateBuildPlan = {
+          family = "Iosevka Custom";
+
+          spacing = "term";
+          serifs = "sans";
+          noCvSs = true;
+          exportGlyphNames = false;
+
+          variants = {
+            inherits = "ss03";
+            design = {
+              g = "single-storey-serifless";
+              j = "serifless";
+              l = "serifed-asymmetric";
+              # t = "hookless";
+              y = "cursive-serifless";
+              z = "curly-serifless";
+              six = "straight-bar";
+              nine = "straight-bar";
+              punctuation-dot = "round";
+              asterisk = "turn-hex-high";
+              underscore = "low";
+              brace = "curly";
+              guillemet = "curly";
+              ampersand = "closed";
+              question = "smooth";
+              micro-sign = "tailed-serifless";
+              lig-equal-chain = "without-notch";
+              lig-hyphen-chain = "without-notch";
+              lig-double-arrow-bar = "without-notch";
+            };
+          };
+        };
+        set = "custom";
       };
     };
   };
