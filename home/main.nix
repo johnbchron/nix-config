@@ -17,7 +17,7 @@
 
     # terminal
     # iosevka-term is an overriden package
-    iosevka iosevka-term
+    iosevka iosevka-term inter
     # global language servers
     nil vscode-langservers-extracted
 
@@ -52,6 +52,7 @@
 
     # network
     protonvpn-cli qbittorrent
+    protonvpn-gui
   ];
 
   programs.btop = {
