@@ -16,7 +16,7 @@
       font = {
         normal = {
           family = "Iosevka Custom";
-          style = "Bold";
+          style = "Medium";
         };
 
         bold = {
@@ -26,15 +26,15 @@
 
         italic = {
           family = "Iosevka Custom";
-          style = "Bold";
+          style = "Medium Italic";
         };
 
         bold_italic = {
           family = "Iosevka Custom";
-          style = "Bold";
+          style = "Bold Italic";
         };
 
-        size = 13;
+        size = 14;
       };
 
       # catppuccin mocha theme
