@@ -33,16 +33,13 @@
     discordo
     obsidian
     rpi-imager
-    spotify-tui
+    # spotify-tui # broken
     obs-studio
     #/ zoom-us
     qdirstat
     vlc
     fstl # viewing stl files
     gimp
-
-    # for gpg signing
-    pinentry-gnome
 
     # dconf
     gnome.dconf-editor
@@ -73,7 +70,7 @@
 
   services.gpg-agent = {
     enable = true;
-    pinentryFlavor = "gnome3";
+    pinentryPackage = pkgs.pinentry-gnome3;
     enableSshSupport = true;
   };
 
