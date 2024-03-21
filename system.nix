@@ -55,7 +55,8 @@
   networking.hostName = "gimli"; # Define your hostname.
 
   # Set your time zone.
-  time.timeZone = "America/Chicago";
+  # time.timeZone = "America/Chicago";
+  time.timeZone = "Europe/Zurich";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -132,7 +133,6 @@
               g = "single-storey-serifless";
               j = "serifless";
               l = "serifed-asymmetric";
-              # t = "hookless";
               y = "cursive-serifless";
               z = "curly-serifless";
               six = "straight-bar";

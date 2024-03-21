@@ -11,6 +11,7 @@
   boot.initrd.availableKernelModules = [ "usb_storage" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
+  boot.kernel.sysctl = { "vm.swappiness" = 80; };
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =

@@ -30,11 +30,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-u0h5FdmIQ4/GrUm1PoKdJ2oit600/7nzTv65LgHlPNg=",
-        "path": "/nix/store/77qsvj5vgj36gx0shg9ms5j69ncg7kx8-source/copilot-wrapped",
+        "path": "/nix/store/xvzvsr7dbmb0hpixzxlar19qhlb1nbq6-source/copilot-wrapped",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/77qsvj5vgj36gx0shg9ms5j69ncg7kx8-source/copilot-wrapped",
+        "path": "/nix/store/xvzvsr7dbmb0hpixzxlar19qhlb1nbq6-source/copilot-wrapped",
         "type": "path"
       }
     },
@@ -210,11 +210,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1710534455,
-        "narHash": "sha256-huQT4Xs0y4EeFKn2BTBVYgEwJSv8SDlm82uWgMnCMmI=",
+        "lastModified": 1710637405,
+        "narHash": "sha256-w/woLwnFyhOeJWPjSWFtMNI2/RZTaAtHySIfm43Chos=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "9af9c1c87ed3e3ed271934cb896e0cdd33dae212",
+        "rev": "299d4668ba61600311553920d9fd9c102145b2cb",
         "type": "github"
       },
       "original": {
