@@ -1,4 +1,4 @@
-{ pkgs, helix-fork, ... }: {
+{ helix-fork, ... }: {
   programs.zsh = {
     enable = true;
     history.size = 3000;
@@ -11,6 +11,7 @@
       ls = "eza";
       l = "eza -alh";
       with-rust = "nix develop \"/home/jlewis/github/with-rust\" --command $SHELL";
+      idea = "eureka";
     };
     sessionVariables = {
       "VISUAL" = "${helix-fork.packages.aarch64-linux.default}/bin/hx";

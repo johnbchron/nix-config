@@ -27,7 +27,7 @@
     iwgtk # networking
 
     # terminal utils
-    typer just speedtest-cli neofetch uair
+    typer just speedtest-cli neofetch uair eureka-ideas
 
     # other apps
     discordo
@@ -40,6 +40,7 @@
     vlc
     fstl # viewing stl files
     gimp
+    thunderbird
 
     # dconf
     gnome.dconf-editor
@@ -103,6 +104,15 @@
         truncation_length = 8;
         truncation_symbol = ">";
       };
+      # direnv = {
+      #   format = "$symbol$loaded/$allowed";
+      #   disabled = false;
+      #   allowed_msg = "[a](bold green)";
+      #   not_allowed_msg = "[n](bold orange)";
+      #   denied_msg = "[d](bold red)";
+      #   loaded_msg = "[l](bold blue)";
+      #   unloaded_msg = "[u](bold red)";
+      # };
       git_status = {
         deleted = "X";
       };
@@ -165,6 +175,13 @@
       name = "Rest"
       duration = "5m"
       command = "notify-send 'Rest Done!'"
+    '';
+  };
+
+  home.file.eureka-config = {
+    target = ".config/eureka/config.json";
+    text = ''
+      {"repo":"/home/jlewis/github/eureka-ideas"}
     '';
   };
 
