@@ -45,13 +45,13 @@
 
         soft-wrap = {
           enable = true;
-          wrap-at-text-width = true;
+          # wrap-at-text-width = true;
         };
       };
 
       keys.insert = {
         "S-tab" = "unindent";
-        "C-y" = "apply_copilot_completion";
+        # "C-y" = "apply_copilot_completion";
       };
 
       keys.normal = {

@@ -4,7 +4,6 @@
 
     apple-silicon-support = {
       url = "github:tpwrules/nixos-apple-silicon";
-      # url = "github:oliverbestmann/nixos-apple-silicon";
     };
 
     home-manager = {
@@ -12,7 +11,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     helix-fork = {
-      url = "github:AlexanderDickie/helix/copilot";
+      # url = "github:AlexanderDickie/helix?rev=995396d5bd10af0740c80bbc74203cc7df8ce627";
+      url = "github:helix-editor/helix";
     };
     copilot-wrapped = {
       url = "./copilot-wrapped";
