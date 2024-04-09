@@ -1,4 +1,4 @@
-{ helix-fork, copilot-wrapped, ... }: {
+{ pkgs, helix-fork, copilot-wrapped, ... }: {
   programs.helix = {
     enable = true;
     package = helix-fork.packages.aarch64-linux.default;
@@ -61,9 +61,9 @@
 
     languages = {
       language-server = {
-        copilot = {
-          command = "${copilot-wrapped.packages.aarch64-linux.default}/bin/copilot";
-          args = [ "--stdio" ];
+        helix-gpt = {
+          command = "${pkgs.helix-gpt}/bin/helix-gpt";
+          args = [ "--handler" "codeium" ];
         };
       };
 
@@ -74,33 +74,33 @@
           formatter = {
             command = "cargo fmt";
           };
-          language-servers = [ "rust-analyzer" "copilot" ];
+          # language-servers = [ "rust-analyzer" "helix-gpt" ];
           indent = { tab-width = 2; unit = "  "; };
         }
         {
           name = "javascript";
-          language-servers = [ "typescript-language-server" "copilot" ];
+          # language-servers = [ "typescript-language-server" "helix-gpt" ];
         }
         {
           name = "typescript";
-          language-servers = [ "typescript-language-server" "copilot" ];
+          # language-servers = [ "typescript-language-server" "helix-gpt" ];
         }
         {
           name = "jsx";
-          language-servers = [ "typescript-language-server" "copilot" ];
+          # language-servers = [ "typescript-language-server" "helix-gpt" ];
         }
         {
           name = "tsx";
-          language-servers = [ "typescript-language-server" "copilot" ];
+          # language-servers = [ "typescript-language-server" "helix-gpt" ];
         }
         {
           name = "wgsl";
-          language-servers = [ "copilot" ];
+          # language-servers = [ "helix-gpt" ];
           indent = { tab-width = 2; unit = "  "; };
         }
         {
           name = "nix";
-          language-servers = [ "nil" "copilot" ];
+          # language-servers = [ "nil" "helix-gpt" ];
         }
       ];
     };

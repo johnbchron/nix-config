@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:johnbchron/nixpkgs/helix-gpt-arm-linux-support";
 
     apple-silicon-support = {
       url = "github:tpwrules/nixos-apple-silicon";
@@ -11,8 +11,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     helix-fork = {
-      # url = "github:AlexanderDickie/helix?rev=995396d5bd10af0740c80bbc74203cc7df8ce627";
-      url = "github:helix-editor/helix";
+      url = "github:helix-editor/helix?tag=24.03";
     };
     copilot-wrapped = {
       url = "./copilot-wrapped";
