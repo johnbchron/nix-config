@@ -1,4 +1,4 @@
-{ pkgs, helix-fork, copilot-wrapped, ... }: {
+{ pkgs, helix-fork, ... }: {
   programs.helix = {
     enable = true;
     package = helix-fork.packages.aarch64-linux.default;
@@ -74,17 +74,17 @@
           formatter = {
             command = "cargo fmt";
           };
-          language-servers = [ "rust-analyzer" "helix-gpt" ];
+          # language-servers = [ "rust-analyzer" "helix-gpt" ];
           indent = { tab-width = 2; unit = "  "; };
         }
         {
           name = "wgsl";
-          language-servers = [ "helix-gpt" ];
+          # language-servers = [ "helix-gpt" ];
           indent = { tab-width = 2; unit = "  "; };
         }
         {
           name = "nix";
-          language-servers = [ "nil" "helix-gpt" ];
+          # language-servers = [ "nil" "helix-gpt" ];
         }
       ];
     };
