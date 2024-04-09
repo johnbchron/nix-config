@@ -13,10 +13,6 @@
     helix-fork = {
       url = "github:helix-editor/helix?tag=24.03";
     };
-    copilot-wrapped = {
-      url = "./copilot-wrapped";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = { self, nixpkgs, home-manager, apple-silicon-support, ... }@inputs:

@@ -63,7 +63,7 @@
       language-server = {
         helix-gpt = {
           command = "${pkgs.helix-gpt}/bin/helix-gpt";
-          args = [ "--handler" "codeium" ];
+          args = [ "--handler" "codeium" "--triggerCharacters" "\"\"" ];
         };
       };
 
@@ -74,33 +74,17 @@
           formatter = {
             command = "cargo fmt";
           };
-          # language-servers = [ "rust-analyzer" "helix-gpt" ];
+          language-servers = [ "rust-analyzer" "helix-gpt" ];
           indent = { tab-width = 2; unit = "  "; };
         }
         {
-          name = "javascript";
-          # language-servers = [ "typescript-language-server" "helix-gpt" ];
-        }
-        {
-          name = "typescript";
-          # language-servers = [ "typescript-language-server" "helix-gpt" ];
-        }
-        {
-          name = "jsx";
-          # language-servers = [ "typescript-language-server" "helix-gpt" ];
-        }
-        {
-          name = "tsx";
-          # language-servers = [ "typescript-language-server" "helix-gpt" ];
-        }
-        {
           name = "wgsl";
-          # language-servers = [ "helix-gpt" ];
+          language-servers = [ "helix-gpt" ];
           indent = { tab-width = 2; unit = "  "; };
         }
         {
           name = "nix";
-          # language-servers = [ "nil" "helix-gpt" ];
+          language-servers = [ "nil" "helix-gpt" ];
         }
       ];
     };
