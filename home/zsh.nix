@@ -5,7 +5,6 @@
     shellAliases = {
       e = "exit";
       clr = "clear";
-      snorbs = "sudo nixos-rebuild switch --flake '/home/jlewis/nix-config#' --impure";
       treeg = "tree --gitignore";
       ls = "eza";
       l = "eza -alh";
