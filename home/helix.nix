@@ -1,7 +1,6 @@
-{ pkgs, helix-fork, ... }: {
+{ pkgs, ... }: {
   programs.helix = {
     enable = true;
-    package = helix-fork.packages.aarch64-linux.default;
     
     settings = {
       theme = "catppuccin_macchiato";
