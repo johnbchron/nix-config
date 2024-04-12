@@ -7,11 +7,9 @@
       clr = "clear";
       snorbs = "sudo nixos-rebuild switch --flake '/home/jlewis/nix-config#' --impure";
       treeg = "tree --gitignore";
-      nd = "nix develop --command $SHELL";
       ls = "eza";
       l = "eza -alh";
       with-rust = "nix develop \"/home/jlewis/github/with-rust\" --command $SHELL";
-      idea = "eureka";
     };
     oh-my-zsh = {
       enable = true;
