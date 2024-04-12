@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:johnbchron/nixpkgs/helix-gpt-arm-linux-support";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     apple-silicon-support = {
       url = "github:tpwrules/nixos-apple-silicon";
@@ -9,9 +9,6 @@
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    helix-fork = {
-      url = "github:helix-editor/helix?tag=24.03";
     };
   };
 
