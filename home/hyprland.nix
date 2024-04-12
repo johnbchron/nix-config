@@ -13,6 +13,7 @@
       
       bind = $mainMod, 1, exec, $terminal
       bind = $mainMod, 2, exec, $browser
+      bind = $mainMod, 3, exec, obsidian
       bind = $mainMod, Q, killactive
       bind = $mainMod, M, exit
       bind = Alt_L, SPACE, exec, $menu
