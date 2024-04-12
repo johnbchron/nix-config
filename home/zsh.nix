@@ -10,6 +10,7 @@
       ls = "eza";
       l = "eza -alh";
       with-rust = "nix develop \"/home/jlewis/github/with-rust\" --command $SHELL";
+      cleanup-dev = "rm -rf ~/github/*/{.direnv/,result} ~/playground/*/{.direnv/,result}";
     };
     oh-my-zsh = {
       enable = true;
