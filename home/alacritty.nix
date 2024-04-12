@@ -21,7 +21,7 @@
 
         bold = {
           family = "Iosevka Custom";
-          style = "Bold";
+          style = "ExtraBold";
         };
 
         italic = {
