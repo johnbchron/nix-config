@@ -13,7 +13,7 @@
       "accel-profile" = "adaptive";
       "tap-to-click" = false;
       "natural-scroll" = false;
-      "speed" = 0.25;
+      "speed" = 0.15;
     };
     "org/gnome/mutter" = {
       "dynamic-workspaces" = true;
