@@ -3,7 +3,8 @@
     enable = true;
     
     settings = {
-      theme = "catppuccin_macchiato";
+      # theme = "catppuccin_macchiato";
+      theme = "rose_pine";
 
       editor = {
         line-number = "relative";
