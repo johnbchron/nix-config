@@ -14,6 +14,7 @@
     # browser
     chromium
     firefox
+    libreoffice-still
 
     # terminal
     # iosevka-term is an overriden package
