@@ -5,9 +5,8 @@
     shellAliases = {
       e = "exit";
       clr = "clear";
-      treeg = "tree --gitignore";
-      ls = "eza";
-      l = "eza -alh";
+      treeg = "eza --tree --all --long --header --total-size --git --git-repos --git-ignore --mounts --hyperlink";
+      l = "eza --all --long --header --total-size --git --git-repos --mounts --hyperlink";
       with-rust = "nix develop \"/home/jlewis/github/with-rust\" --command $SHELL";
       cleanup-dev = "rm -rf ~/github/*/{.direnv/,result} ~/playground/*/{.direnv/,result}";
     };
