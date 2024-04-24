@@ -187,13 +187,6 @@
     '';
   };
 
-  home.file.eureka-config = {
-    target = ".config/eureka/config.json";
-    text = ''
-      {"repo":"/home/jlewis/github/eureka-ideas"}
-    '';
-  };
-
   programs.zellij = {
     enable = true;
     settings = {
