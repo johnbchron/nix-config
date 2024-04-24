@@ -12,13 +12,14 @@
 
   home.packages = with pkgs; [
     # browser
-    chromium
+    ungoogled-chromium
     firefox
     libreoffice-still
 
-    # terminal
-    # iosevka-term is an overriden package
-    iosevka iosevka-term inter
+    # fonts
+    iosevka inter
+    iosevka-term # overriden; see `system.nix`
+
     # global language servers
     nil vscode-langservers-extracted
 
@@ -28,20 +29,21 @@
     iwgtk # networking
 
     # terminal utils
-    typer just speedtest-cli neofetch uair eureka-ideas
+    typer # typing test
+    just # command runner I use in all projects
+    speedtest-cli # for testing network speed
+    neofetch # :sunglasses:
+    uair # pomodori timer
 
     # other apps
-    discordo
-    obsidian
-    rpi-imager
-    # spotify-tui # broken
-    obs-studio
-    #/ zoom-us
-    qdirstat
-    vlc
+    discordo # discord tui
+    obsidian # notes & stuff
+    rpi-imager # disk imaging
+    obs-studio # recording & streaming
+    qdirstat # disk space usage 
+    vlc # video playback
     fstl # viewing stl files
-    gimp
-    thunderbird
+    gimp # image editing
 
     # dconf
     gnome.dconf-editor
