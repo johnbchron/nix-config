@@ -132,15 +132,16 @@
     enableZshIntegration = true;
   };
 
-  services.spotifyd  = {
+  programs.spotify-player = {
     enable = true;
     settings = {
-      global = {
-        username = "spotify@jlewis.sh";
-        password = "4w1k2sFFhJBIwiU4aIzYjwBH2";
-        device_name = "gimli-spotifyd";
-        autoplay = false;
+      device = {
+        name = "gimli-splayer";
         device_type = "computer";
+        volume = 100;
+        bitrate = 320;
+        audio_cache = true;
+        normalization = true;
       };
     };
   };
