@@ -1,5 +1,5 @@
 
-{ config, pkgs, apple-silicon-support, hyprland, hardwarePath, ... }: {
+{ pkgs, hardwarePath, ... }: {
   imports = [
     hardwarePath
   ];
