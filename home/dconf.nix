@@ -15,6 +15,9 @@
       "natural-scroll" = false;
       "speed" = 0.15;
     };
+    "org/gnome/desktop/peripherals/mouse" = {
+      "speed" = -0.2;
+    };
     "org/gnome/mutter" = {
       "dynamic-workspaces" = true;
       "edge-tiling" = true;

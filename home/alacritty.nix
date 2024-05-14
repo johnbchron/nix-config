@@ -9,7 +9,7 @@
     
       window = {
         opacity = 1.0;
-        # startup_mode = "Fullscreen";
+        startup_mode = "Fullscreen";
         # option_as_alt = "Both";
       };
       

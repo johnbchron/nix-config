@@ -168,6 +168,9 @@
     # fonts
     iosevka
 
+    # virtualization
+    qemu quickemu
+
     # proxies and such
     cloudflared # used to proxy ssh
 
@@ -194,6 +197,8 @@
   };
 
   programs.zsh.enable = true;
+
+  programs.nix-ld.enable = true;
 
   # # configure steam
   # programs.steam = {

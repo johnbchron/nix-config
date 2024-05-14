@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, scribe, ... }: {
   imports = [
     ./alacritty.nix
     ./dconf.nix
@@ -14,7 +14,6 @@
     # browser
     ungoogled-chromium
     firefox
-    libreoffice-still
 
     # fonts
     iosevka inter
@@ -33,10 +32,9 @@
     just # command runner I use in all projects
     speedtest-cli # for testing network speed
     neofetch # :sunglasses:
-    uair # pomodori timer
+    # uair # pomodori timer
 
     # other apps
-    discordo # discord tui
     obsidian # notes & stuff
     rpi-imager # disk imaging
     obs-studio # recording & streaming
@@ -44,6 +42,10 @@
     vlc # video playback
     fstl # viewing stl files
     gimp # image editing
+    libreoffice-still # office stuff
+    audacity
+    # discordo # discord tui
+    # non # audio editing
 
     # dconf
     gnome.dconf-editor
@@ -54,9 +56,20 @@
     # network
     protonvpn-cli qbittorrent
     protonvpn-gui
+
+    # my programs
+    scribe.packages.aarch64-linux.default
   ];
 
-  programs.btop = {
+  programs.atuin = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  # programs.btop = {
+  #   enable = true;
+  # };
+  programs.bottom = {
     enable = true;
   };
 
@@ -66,6 +79,15 @@
     nix-direnv = {
       enable = true;
     };
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.firefox = {
+    enable = true;
   };
 
   programs.gpg = {
@@ -80,10 +102,10 @@
 
   gtk = {
     enable = true;
-    theme = {
-      name = "palenight";
-      package = pkgs.palenight-theme;
-    };
+    # theme = {
+    #   name = "palenight";
+    #   package = pkgs.palenight-theme;
+    # };
     iconTheme = {
       package = pkgs.gnome.adwaita-icon-theme;
       name = "Adwaita";

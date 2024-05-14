@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs?rev=8035fade6020ea4e7a35efe7a77617390fdfa879";
 
     apple-silicon-support = {
       url = "github:tpwrules/nixos-apple-silicon";
@@ -9,6 +9,11 @@
 
     home-manager = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    scribe = {
+      url = "github:johnbchron/scribe";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
