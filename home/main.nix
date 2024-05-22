@@ -38,6 +38,7 @@
     obsidian # notes & stuff
     rpi-imager # disk imaging
     obs-studio # recording & streaming
+    blender # video editing & compositing
     qdirstat # disk space usage 
     vlc # video playback
     fstl # viewing stl files
@@ -87,6 +88,10 @@
   };
 
   programs.firefox = {
+    enable = true;
+  };
+
+  programs.gh = {
     enable = true;
   };
 

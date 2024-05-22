@@ -2,10 +2,11 @@
   programs.zsh = {
     enable = true;
     history.size = 3000;
-    shellAliases = {
+    shellAliases = rec {
       e = "exit";
       clr = "clear";
-      treeg = "eza --tree --all --long --header --total-size --git --git-repos --git-ignore --mounts --hyperlink";
+      tree = "eza --tree --all --long --header --total-size --git --git-repos --mounts --hyperlink";
+      treeg = tree + " --git-ignore";
       l = "eza --all --long --header --total-size --git --git-repos --mounts --hyperlink";
       ls = "eza";
       with-rust = "nix develop \"/home/jlewis/github/with-rust\" --command $SHELL";
