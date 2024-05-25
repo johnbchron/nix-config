@@ -100,6 +100,12 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # for mounting an iphone
+  services.usbmuxd = {
+    enable = true;
+    # package = pkgs.usbmuxd2;
+  };
+
   # set up users
   users = {
     defaultUserShell = pkgs.zsh;
@@ -176,7 +182,10 @@
 
     # gnome stuff
     gnome.gnome-tweaks
-    gnomeExtensions.desktop-cube
+    gnomeExtensions.paperwm
+
+    # for iphone mounting
+    libimobiledevice
   ];
 
   # add zsh to /etc/shells

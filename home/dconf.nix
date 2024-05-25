@@ -38,6 +38,9 @@
       # "picture-uri" = "file:///home/jlewis/.local/share/backgrounds/2024-02-06-09-55-19-pexels-eberhard-grossgasteiger-640781.jpg";
       "picture-uri" = "file:///home/jlewis/.local/share/backgrounds/2024-05-21-04-58-05-IMG_4211.JPEG";
     };
+    "org/gnome/shell" = {
+      "disable-user-extensions" = false;
+    };
     "org/gnome/shell/keybindings" = {
       "show-screenshot-ui" = [ "<Super>s" ];
     };

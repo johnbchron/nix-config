@@ -9,11 +9,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1714264490,
-        "narHash": "sha256-5hKsAO7ZLwOLCXeI5+jDmDr7t4zBezk0xidVWghoBB0=",
+        "lastModified": 1716521847,
+        "narHash": "sha256-4sRvBx46iQycFNyUcaWevGzeudhil9HyWxiFb9zPsNE=",
         "owner": "tpwrules",
         "repo": "nixos-apple-silicon",
-        "rev": "4fac534b775aa0c40611257fa19ab8ab3243f4dc",
+        "rev": "a9f9b2aae396861cdd99bd7b12abcc469a2bfa9e",
         "type": "github"
       },
       "original": {
@@ -99,11 +99,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1715486357,
-        "narHash": "sha256-4pRuzsHZOW5W4CsXI9uhKtiJeQSUoe1d2M9mWU98HC4=",
+        "lastModified": 1716457508,
+        "narHash": "sha256-ZxzffLuWRyuMrkVVq7wastNUqeO0HJL9xqfY1QsYaqo=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "44677a1c96810a8e8c4ffaeaad10c842402647c1",
+        "rev": "850cb322046ef1a268449cf1ceda5fd24d930b05",
         "type": "github"
       },
       "original": {
@@ -114,17 +114,17 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1713550038,
-        "narHash": "sha256-Rf91U6rPdjAyLb+9bzyRtjALcU8A7tNZHjNtj+72hUc=",
+        "lastModified": 1716330097,
+        "narHash": "sha256-8BO3B7e3BiyIDsaKA0tY8O88rClYRTjvAp66y+VBUeU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "8035fade6020ea4e7a35efe7a77617390fdfa879",
+        "rev": "5710852ba686cc1fd0d3b8e22b3117d43ba374c2",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
-        "rev": "8035fade6020ea4e7a35efe7a77617390fdfa879",
         "type": "github"
       }
     },
@@ -183,11 +183,11 @@
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
-        "lastModified": 1715593084,
-        "narHash": "sha256-yzhVOMv10XYFeQ9oe+0s+paMsCMfx6nKZNg0o8WlDww=",
+        "lastModified": 1716043371,
+        "narHash": "sha256-u7vUTfOEsyo8yRnNK8wGD1QCFmWLkGWZBMGYTwNwQfc=",
         "owner": "johnbchron",
         "repo": "scribe",
-        "rev": "1a5eee62692f659cf33fe9f3473479d909f63590",
+        "rev": "b34955de9488584ebc9831e8d92e01712ac5b7bb",
         "type": "github"
       },
       "original": {
