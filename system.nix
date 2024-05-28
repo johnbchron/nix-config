@@ -172,6 +172,7 @@
 
     # gnome stuff
     gnome.gnome-tweaks
+    gnomeExtensions.just-perfection
 
     # for iphone mounting
     libimobiledevice

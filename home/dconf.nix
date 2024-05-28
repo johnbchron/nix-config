@@ -39,7 +39,14 @@
       "picture-uri" = "file:///home/jlewis/.local/share/backgrounds/2024-05-21-04-58-05-IMG_4211.JPEG";
     };
     "org/gnome/shell" = {
+      "enabled-extensions" = [
+        "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
+        "just-perfection-desktop@just-perfection"
+      ];
       "disable-user-extensions" = false;
+    };
+    "org/gnome/shell/extensions/just-perfection" = {
+      "clock-menu-position" = 1;
     };
     "org/gnome/shell/keybindings" = {
       "show-screenshot-ui" = [ "<Super>s" ];
