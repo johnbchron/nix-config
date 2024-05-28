@@ -172,7 +172,6 @@
 
     # gnome stuff
     gnome.gnome-tweaks
-    gnomeExtensions.paperwm
 
     # for iphone mounting
     libimobiledevice
