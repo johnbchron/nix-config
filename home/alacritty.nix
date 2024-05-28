@@ -34,7 +34,7 @@
           style = "Bold Italic";
         };
 
-        size = 12;
+        size = 14;
       };
 
       # catppuccin mocha theme
