@@ -26,6 +26,7 @@
   boot.loader.efi.canTouchEfiVariables = false;
   boot.binfmt.emulatedSystems = [ "x86_64-linux" ];
 
+  boot.kernelParams = [ "apple_dcp.show_notch=1" ];
 
   # Asahi hardware-specific
   hardware.asahi = {
