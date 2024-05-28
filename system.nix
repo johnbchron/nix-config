@@ -26,17 +26,6 @@
   boot.loader.efi.canTouchEfiVariables = false;
   boot.binfmt.emulatedSystems = [ "x86_64-linux" ];
 
-  boot.kernelPatches = [
-    {
-      name = "asahi-uclamp";
-      patch = null;
-      extraConfig = ''
-        UCLAMP_BUCKETS_COUNT 5
-        UCLAMP_TASK_GROUP y
-        UCLAMP_TASK y
-      '';
-    }
-  ];
 
   # Asahi hardware-specific
   hardware.asahi = {
