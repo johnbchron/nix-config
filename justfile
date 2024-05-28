@@ -2,6 +2,9 @@
 rebuild-switch:
     sudo nixos-rebuild switch --flake '/home/jlewis/nix-config#' --impure
 
+update-inputs:
+    nix flake update
+
 clean-home-manager:
     nix run nixpkgs#home-manager -- expire-generations "-2 minutes"
 
