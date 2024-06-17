@@ -45,8 +45,8 @@
   networking.hostName = "gimli"; # Define your hostname.
 
   # Set your time zone.
-  # time.timeZone = "America/Chicago";
-  time.timeZone = "Europe/Zurich";
+  time.timeZone = "America/Chicago";
+  # time.timeZone = "Europe/Zurich";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -113,50 +113,14 @@
     allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
       "obsidian" "steam" "steam-original" "steam-runtime" "steam-run"
     ];
-    packageOverrides = super: let self = super.pkgs; in {
-      iosevka-term = self.iosevka.override {
-        privateBuildPlan = {
-          family = "Iosevka Custom";
-
-          spacing = "term";
-          serifs = "sans";
-          noCvSs = true;
-          exportGlyphNames = false;
-
-          variants = {
-            inherits = "ss03";
-            design = {
-              g = "single-storey-serifless";
-              j = "serifless";
-              l = "serifed-asymmetric";
-              y = "cursive-serifless";
-              z = "curly-serifless";
-              six = "straight-bar";
-              nine = "straight-bar";
-              punctuation-dot = "round";
-              asterisk = "turn-hex-high";
-              underscore = "low";
-              brace = "curly";
-              guillemet = "curly";
-              ampersand = "closed";
-              question = "smooth";
-              micro-sign = "tailed-serifless";
-              lig-equal-chain = "without-notch";
-              lig-hyphen-chain = "without-notch";
-              lig-double-arrow-bar = "without-notch";
-            };
-          };
-        };
-        set = "custom";
-      };
-    };
+    packageOverrides = import ./overrides.nix;
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # basic shell utils
-    wget curl git tree file unzip gzip
+    wget curl git tree file unzip gzip jq
 
     # fancy shell utils
     fzf btop bat eza

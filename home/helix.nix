@@ -11,11 +11,15 @@
         mouse = true;
         rulers = [ 80 ];
         bufferline = "always";
+        cursorline = true;
+        # cursorcolumn = true;
         color-modes = true;
         idle-timeout = 200;
         text-width = 80;
       
         statusline = {
+          # left = ["mode" "spinner" "version-control" "file-name"];
+          left = ["mode" "spinner" "version-control" "file-name" "read-only-indicator" "file-modification-indicator"];
           mode.normal = "NORMAL";
           mode.insert = "INSERT";
           mode.select = "SELECT";
@@ -24,9 +28,6 @@
         lsp = {
           display-messages = true;
           display-inlay-hints = true;
-          # inline-diagnostics = {
-          #   enabled = true;
-          # };
         };
 
         cursor-shape = {
@@ -51,20 +52,22 @@
 
       keys.insert = {
         "S-tab" = "unindent";
-        # "C-y" = "apply_copilot_completion";
       };
 
       keys.normal = {
+        "q" = ":quit-all";
+      };
+      keys.select = {
         "q" = ":quit-all";
       };
     };
 
     languages = {
       language-server = {
-        helix-gpt = {
-          command = "${pkgs.helix-gpt}/bin/helix-gpt";
-          args = [ "--handler" "codeium" "--triggerCharacters" "\"\"" ];
-        };
+        # helix-gpt = {
+        #   command = "${pkgs.helix-gpt}/bin/helix-gpt";
+        #   args = [ "--handler" "codeium" "--triggerCharacters" "\"\"" ];
+        # };
       };
 
       language = [

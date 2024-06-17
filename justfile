@@ -2,7 +2,7 @@
 rebuild-switch:
     sudo nixos-rebuild switch --flake '/home/jlewis/nix-config#' --impure
 
-update-inputs:
+update:
     nix flake update
 
 clean-home-manager:
