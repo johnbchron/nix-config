@@ -24,9 +24,9 @@
   };
 
   outputs = { self, nixpkgs, home-manager, apple-silicon-support, niri, ... }@inputs: {
-    nixosConfigurations.gimli = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.gimli = nixpkgs.lib.nixosSystem rec {
       system = "aarch64-linux";
-      specialArgs = inputs;
+      specialArgs = inputs // { inherit system; };
       modules = [
         ./system/main.nix
         ./system/graphical.nix
@@ -42,15 +42,15 @@
               ./home/terminal.nix
               ./home/graphical.nix
             ]; };
-            extraSpecialArgs = inputs;
+            extraSpecialArgs = inputs // { inherit system; };
           };
         }
       ];
     };
 
-    nixosConfigurations.bumble = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.bumble = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
-      specialArgs = inputs;
+      specialArgs = inputs // { inherit system; };
       modules = [
         ({ modulesPath, ... }:
           { imports = [ "${modulesPath}/virtualisation/amazon-image.nix" ]; })
@@ -63,7 +63,7 @@
               ./home/main.nix
               ./home/terminal.nix
             ]; };
-            extraSpecialArgs = inputs;
+            extraSpecialArgs = inputs // { inherit system; };
           };
         }
       ];

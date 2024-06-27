@@ -1,4 +1,4 @@
-{ pkgs, scribe, ... }: {
+{ pkgs, scribe, system, ... }: {
   imports = [
     ./terminal/helix.nix
     ./terminal/git.nix
@@ -25,7 +25,7 @@
     protonvpn-cli # proton vpn
 
     # my programs
-    scribe.packages.aarch64-linux.default
+    scribe.packages.${system}.default
   ];
 
   # shell history

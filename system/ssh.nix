@@ -2,7 +2,7 @@
   programs.ssh = {
     extraConfig = ''
       Host bumble
-        HostName ec2-18-219-61-224.us-east-2.compute.amazonaws.com
+        HostName ec2-3-144-160-222.us-east-2.compute.amazonaws.com
         User root
         IdentityFile /home/jlewis/keys/bumble-key.pem
     '';
