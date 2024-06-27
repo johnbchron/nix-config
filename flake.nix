@@ -84,6 +84,7 @@
         modules = [
           ({ ... }: { nix.registry.nixpkgs.flake = nixpkgs; })
         ] ++ bumble-modules;
+        format = "amazon";
       };
   };
 }
