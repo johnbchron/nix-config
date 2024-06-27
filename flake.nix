@@ -79,7 +79,7 @@
         system = "x86_64-linux";
         specialArgs = inputs // {
           inherit system;
-          diskSize = 16 * 1024;
+          diskSize = 40 * 1024;
         };
         modules = [
           ({ ... }: { nix.registry.nixpkgs.flake = nixpkgs; })
