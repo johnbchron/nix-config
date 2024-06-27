@@ -21,37 +21,16 @@
       url = "github:johnbchron/scribe";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, apple-silicon-support, niri, ... }@inputs: {
-    nixosConfigurations.gimli = nixpkgs.lib.nixosSystem rec {
-      system = "aarch64-linux";
-      specialArgs = inputs // { inherit system; };
-      modules = [
-        ./system/main.nix
-        ./system/graphical.nix
-        ./hosts/gimli/system.nix
-        apple-silicon-support.nixosModules.default
-        niri.nixosModules.niri
-        home-manager.nixosModules.home-manager {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.jlewis = { ... }: { imports = [
-              ./home/main.nix
-              ./home/terminal.nix
-              ./home/graphical.nix
-            ]; };
-            extraSpecialArgs = inputs // { inherit system; };
-          };
-        }
-      ];
-    };
-
-    nixosConfigurations.bumble = nixpkgs.lib.nixosSystem rec {
-      system = "x86_64-linux";
-      specialArgs = inputs // { inherit system; };
-      modules = [
+  outputs = { self, nixpkgs, home-manager, apple-silicon-support, niri, nixos-generators, ... }@inputs: 
+    let
+      bumble-modules = [
         ({ modulesPath, ... }:
           { imports = [ "${modulesPath}/virtualisation/amazon-image.nix" ]; })
         ./system/main.nix
@@ -63,10 +42,48 @@
               ./home/main.nix
               ./home/terminal.nix
             ]; };
-            extraSpecialArgs = inputs // { inherit system; };
+            extraSpecialArgs = inputs // { system = "x86_64-linux"; };
           };
         }
       ];
-    };
+    in {
+      nixosConfigurations.gimli = nixpkgs.lib.nixosSystem rec {
+        system = "aarch64-linux";
+        specialArgs = inputs // { inherit system; };
+        modules = [
+          ./system/main.nix
+          ./system/graphical.nix
+          ./hosts/gimli/system.nix
+          apple-silicon-support.nixosModules.default
+          niri.nixosModules.niri
+          home-manager.nixosModules.home-manager {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.jlewis = { ... }: { imports = [
+                ./home/main.nix
+                ./home/terminal.nix
+                ./home/graphical.nix
+              ]; };
+              extraSpecialArgs = inputs // { inherit system; };
+            };
+          }
+        ];
+      };
+
+      nixosConfigurations.bumble = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = bumble-modules;
+      };
+      packages.x86_64-linux.bumble = nixos-generators.nixosGenerate rec {
+        system = "x86_64-linux";
+        specialArgs = inputs // {
+          inherit system;
+          diskSize = 16 * 1024;
+        };
+        modules = [
+          ({ ... }: { nix.registry.nixpkgs.flake = nixpkgs; })
+        ] ++ bumble-modules;
+      };
   };
 }
