@@ -1,4 +1,33 @@
-{ ... }: {
+{ pkgs, scribe, ... }: {
+  imports = [
+    ./terminal/helix.nix
+    ./terminal/git.nix
+  ];
+
+  home.packages = with pkgs; [
+    # basic shell utils
+    git # version control
+    unzip # unzips zip archives
+    gzip # zips gz archives
+    fzf # generic fuzzy finder
+    btop # pretty system monitor
+    bat # cat but fancy
+    eza # ls but fancy
+    just # command runner
+    wget # http fetching
+    curl # http fetching
+    file # provides file info
+    jq # queries json
+
+    typer # typing test
+    speedtest-cli # for testing network speed
+    neofetch # :sunglasses:
+    protonvpn-cli # proton vpn
+
+    # my programs
+    scribe.packages.aarch64-linux.default
+  ];
+
   # shell history
   programs.atuin = {
     enable = true;
@@ -27,6 +56,55 @@
   # github cli
   programs.gh = {
     enable = true;
+  };
+
+  # gpg
+  programs.gpg = {
+    enable = true;
+  };
+
+  # gpg agent
+  services.gpg-agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-gnome3;
+    enableSshSupport = true;
+  };
+
+  # irc/matrix client
+  programs.tiny = {
+    enable = true;
+    settings = {
+      servers = [
+        {
+          addr = "irc.oftc.net";
+          port = 6697;
+          tls = true;
+          realname = "johnbchron";
+          nicks = [ "john" ];
+
+          join = [ "#asahi" ];
+        }
+      ];
+      defaults = {
+        realname = "johnbchron";
+        nicks = [ "john" ];
+      };
+    };
+  };
+
+  # spotify
+  programs.spotify-player = {
+    enable = true;
+    settings = {
+      device = {
+        name = "gimli-splayer";
+        device_type = "computer";
+        volume = 100;
+        bitrate = 320;
+        audio_cache = true;
+        normalization = true;
+      };
+    };
   };
 
   # extra fancy shell prompt

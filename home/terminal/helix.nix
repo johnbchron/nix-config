@@ -1,4 +1,8 @@
 { pkgs, ... }: {
+  home.packages = with pkgs; [
+    nil # nix lsp
+  ];
+
   programs.helix = {
     enable = true;
     
@@ -19,7 +23,7 @@
       
         statusline = {
           # left = ["mode" "spinner" "version-control" "file-name"];
-          left = ["mode" "spinner" "version-control" "file-name" "read-only-indicator" "file-modification-indicator"];
+          left = ["mode" "spinner" "file-name" "read-only-indicator" "file-modification-indicator" "version-control"];
           mode.normal = "NORMAL";
           mode.insert = "INSERT";
           mode.select = "SELECT";
@@ -89,7 +93,40 @@
           name = "nix";
           # language-servers = [ "nil" "helix-gpt" ];
         }
+        {
+          name = "surrealdb";
+          scope = "source.surrealdb";
+          file-types = [ "surql" ];
+          comment-tokens = "--";
+          indent = { tab-width = 2; unit = "  "; };
+          grammar = "surrealdb";
+        }
+      ];
+
+      # note: in order for this grammar to work, run the following:
+      # `nix shell nixpkgs#clang -c sh -c "hx --grammar fetch && hx --grammar build"`
+      # it may take some moments to fetch the first time
+      grammar = [
+        {
+          name = "surrealdb";
+          source = {
+            git = "https://github.com/DariusCorvus/tree-sitter-surrealdb";
+            rev = "17a7ed4481bdaaa35a1372f3a94bc851d634a19e";
+          };
+        }
       ];
     };
+  };
+
+  
+  home.file.surql-queries = let
+    surql-ts-src = pkgs.fetchgit {
+      url = "https://github.com/DariusCorvus/tree-sitter-surrealdb";
+      rev = "17a7ed4481bdaaa35a1372f3a94bc851d634a19e";
+      hash = "sha256-/xX5lEQKFuLQl6YxUA2WLKGX5P2GBugtYj42WCtA0xU=";
+    };
+  in {
+    source = "${surql-ts-src}/queries/highlights.scm";
+    target = ".config/helix/runtime/queries/surrealdb/highlights.scm";
   };
 }

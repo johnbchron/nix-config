@@ -12,6 +12,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     scribe = {
       url = "github:johnbchron/scribe";
@@ -19,26 +23,49 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, apple-silicon-support, ... }@inputs:
-    let
+  outputs = { self, nixpkgs, home-manager, apple-silicon-support, niri, ... }@inputs: {
+    nixosConfigurations.gimli = nixpkgs.lib.nixosSystem {
       system = "aarch64-linux";
-      hardwarePath = ./hardware/gimli.nix;
-    in {
-      nixosConfigurations.gimli = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = inputs // { inherit hardwarePath; };
-        modules = [
-          ./system.nix
-          apple-silicon-support.nixosModules.default
-          home-manager.nixosModules.home-manager {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.jlewis = import ./home/main.nix;
-              extraSpecialArgs = inputs;
-            };
-          }
-        ];
-      };
+      specialArgs = inputs;
+      modules = [
+        ./system/main.nix
+        ./system/graphical.nix
+        ./hosts/gimli/system.nix
+        apple-silicon-support.nixosModules.default
+        niri.nixosModules.niri
+        home-manager.nixosModules.home-manager {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.jlewis = { ... }: { imports = [
+              ./home/main.nix
+              ./home/terminal.nix
+              ./home/graphical.nix
+            ]; };
+            extraSpecialArgs = inputs;
+          };
+        }
+      ];
+    };
+
+    nixosConfigurations.bumble = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = inputs;
+      modules = [
+        ./system/main.nix
+        ./hosts/gimli/system.nix
+        home-manager.nixosModules.home-manager {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.jlewis = { ... }: { imports = [
+              ./home/main.nix
+              ./home/terminal.nix
+            ]; };
+            extraSpecialArgs = inputs;
+          };
+        }
+      ];
+    };
   };
 }
