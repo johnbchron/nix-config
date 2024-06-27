@@ -1,0 +1,30 @@
+
+name: CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+        with:
+          extra-conf: |
+            keep-outputs = true
+            keep-derivations = true
+      - name: Use Nix Cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
+      - name: Install flyctl
+        uses: superfly/flyctl-actions/setup-flyctl@master
+      - name: Containerize & Deploy to Fly
+        run: |
+          nix run nixpkgs#nixos-generators -- --flake ".#bumble" -f amazon --system x86_64-linux
+          nix run github:NixOS/amis#upload-ami -- --image-info ./result/nix-support/image-info.json
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
