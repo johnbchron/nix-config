@@ -52,6 +52,8 @@
       system = "x86_64-linux";
       specialArgs = inputs;
       modules = [
+        ({ modulesPath, ... }:
+          { imports = [ "${modulesPath}/virtualisation/amazon-image.nix" ]; })
         ./system/main.nix
         ./hosts/gimli/system.nix
         home-manager.nixosModules.home-manager {
