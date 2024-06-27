@@ -55,7 +55,6 @@
         ({ modulesPath, ... }:
           { imports = [ "${modulesPath}/virtualisation/amazon-image.nix" ]; })
         ./system/main.nix
-        ./hosts/gimli/system.nix
         home-manager.nixosModules.home-manager {
           home-manager = {
             useGlobalPkgs = true;
