@@ -42,7 +42,6 @@
               ./home/main.nix
               ./home/terminal.nix
             ]; };
-            extraSpecialArgs = inputs // { system = "x86_64-linux"; };
           };
         }
       ];
@@ -75,14 +74,14 @@
         system = "x86_64-linux";
         modules = bumble-modules;
       };
-      packages.x86_64-linux.bumble = nixos-generators.nixosGenerate rec {
+      packages.aarch64-linux.bumble = nixos-generators.nixosGenerate rec {
         system = "x86_64-linux";
-        specialArgs = inputs // {
-          inherit system;
-          diskSize = 40 * 1024;
-        };
+        specialArgs = inputs // { inherit system; };
         modules = [
-          ({ ... }: { nix.registry.nixpkgs.flake = nixpkgs; })
+          ({ ... }: {
+            nix.registry.nixpkgs.flake = nixpkgs;
+            amazonImage.sizeMB = 20 * 1024;
+          })
         ] ++ bumble-modules;
         format = "amazon";
       };
