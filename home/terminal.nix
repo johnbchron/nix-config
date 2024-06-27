@@ -180,6 +180,18 @@
     };
   };
 
+  # nix-shell custom zsh plugin
+  home.file.ohmyzsh-nix-shell = let
+    nix-shell-repo = pkgs.fetchgit {
+      url = "https://github.com/chisui/zsh-nix-shell";
+      rev = "82ca15e638cc208e6d8368e34a1625ed75e08f90";
+      hash = "sha256-Rtg8kWVLhXRuD2/Ctbtgz9MQCtKZOLpAIdommZhXKdE=";
+    };
+  in {
+    source = "${nix-shell-repo}";
+    target = ".config/ohmyzsh_custom/plugins/nix-shell";
+  };
+
   # terminal multiplexer
   programs.zellij = {
     enable = true;
