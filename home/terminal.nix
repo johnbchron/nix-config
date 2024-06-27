@@ -25,7 +25,7 @@
     protonvpn-cli # proton vpn
 
     # my programs
-    scribe.packages.${system}.default
+    # scribe.packages.${system}.default
   ];
 
   # shell history
