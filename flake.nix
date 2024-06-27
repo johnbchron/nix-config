@@ -74,7 +74,7 @@
         system = "x86_64-linux";
         modules = bumble-modules;
       };
-      packages.aarch64-linux.bumble = nixos-generators.nixosGenerate rec {
+      packages.x86_64-linux.bumble = nixos-generators.nixosGenerate rec {
         system = "x86_64-linux";
         specialArgs = inputs // { inherit system; };
         modules = [
