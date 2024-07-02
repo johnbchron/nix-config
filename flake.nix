@@ -1,6 +1,5 @@
 {
   inputs = {
-    # nixpkgs.url = "github:NixOS/nixpkgs?rev=8035fade6020ea4e7a35efe7a77617390fdfa879";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     apple-silicon-support = {
