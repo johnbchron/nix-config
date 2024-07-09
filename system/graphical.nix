@@ -13,18 +13,18 @@
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
     gnome-tour
-  ]) ++ (with pkgs.gnome; [
-    gnome-music
+  ]) ++ (with pkgs; [
+    gnome.gnome-music
     # gedit # text editor
     epiphany # web browser
     geary # email reader
-    tali # poker game
-    iagno # go game
-    hitori # sudoku game
-    atomix # puzzle game
+    gnome.tali # poker game
+    gnome.iagno # go game
+    gnome.hitori # sudoku game
+    gnome.atomix # puzzle game
     yelp # Help view
-    gnome-contacts
-    gnome-initial-setup
+    gnome.gnome-contacts
+    gnome.gnome-initial-setup
   ]);
 
   nixpkgs = {

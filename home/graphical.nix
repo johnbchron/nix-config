@@ -37,7 +37,7 @@
     audacity # audio editing
     fragments # torrents
     inkscape # vector editing
-    gnome.dconf-editor # dconf obv
+    dconf-editor # dconf obv
     # discordo # discord tui
 
     # games
@@ -48,7 +48,7 @@
     protonvpn-gui
 
     # gnome stuff
-    gnome.gnome-tweaks
+    gnome-tweaks
     gnomeExtensions.just-perfection
   ];
 
@@ -59,7 +59,7 @@
   gtk = {
     enable = true;
     iconTheme = {
-      package = pkgs.gnome.adwaita-icon-theme;
+      package = pkgs.adwaita-icon-theme;
       name = "Adwaita";
     };
   };
