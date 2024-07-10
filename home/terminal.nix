@@ -1,7 +1,8 @@
-{ pkgs, scribe, system, ... }: {
+{ pkgs, ... }: {
   imports = [
     ./terminal/helix.nix
     ./terminal/git.nix
+    ./terminal/rss.nix
   ];
 
   home.packages = with pkgs; [
