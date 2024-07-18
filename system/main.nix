@@ -10,6 +10,7 @@
     settings = {
       auto-optimise-store = true;
       allow-import-from-derivation = true;
+      trusted-users = [ "root" "jlewis" ];
       substituters = [
         "https://nix-community.cachix.org"
         "https://cache.nixos.org/"

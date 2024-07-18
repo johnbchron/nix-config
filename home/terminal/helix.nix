@@ -22,8 +22,10 @@
         text-width = 80;
       
         statusline = {
-          # left = ["mode" "spinner" "version-control" "file-name"];
-          left = ["mode" "spinner" "file-name" "read-only-indicator" "file-modification-indicator" "version-control"];
+          left = [
+            "mode" "spinner" "file-name" "read-only-indicator"
+            "file-modification-indicator" "version-control"
+          ];
           mode.normal = "NORMAL";
           mode.insert = "INSERT";
           mode.select = "SELECT";

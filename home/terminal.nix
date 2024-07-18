@@ -105,6 +105,8 @@
         audio_cache = true;
         normalization = true;
       };
+      cover_img_length = 12;
+      cover_img_width = 5;
     };
   };
 
@@ -124,6 +126,7 @@
       directory = {
         truncation_length = 8;
         truncation_symbol = ">";
+        truncate_to_repo = false;
       };
       direnv = {
         format = "with [$symbol$loaded/$allowed](bold yellow) ";
