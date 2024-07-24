@@ -1,5 +1,7 @@
 { ... }: {
-  dconf.settings = {
+  dconf.settings = let
+    "background-uri" = "file:///home/jlewis/.local/share/backgrounds/2024-07-21-12-18-23-IMG_6573.png";
+  in {
     "org/gnome/desktop/interface" = {
       "clock-format" = "24h";
       "clock-show-date" = true;
@@ -35,8 +37,11 @@
     "org/gnome/desktop/screensaver" = {
       "color-shading-type" = "solid";
       "picture-options" = "zoom";
-      # "picture-uri" = "file:///home/jlewis/.local/share/backgrounds/2024-02-06-09-55-19-pexels-eberhard-grossgasteiger-640781.jpg";
-      "picture-uri" = "file:///home/jlewis/.local/share/backgrounds/2024-05-21-04-58-05-IMG_4211.JPEG";
+      "picture-uri" = background-uri;
+    };
+    "org/gnome/desktop/background" = {
+      "picture-uri" = background-uri;
+      "picture-uri-dark" = background-uri;
     };
     "org/gnome/shell" = {
       "enabled-extensions" = [
