@@ -70,10 +70,17 @@
 
     languages = {
       language-server = {
-        # helix-gpt = {
-        #   command = "${pkgs.helix-gpt}/bin/helix-gpt";
-        #   args = [ "--handler" "codeium" "--triggerCharacters" "\"\"" ];
-        # };
+        rust-analyzer = {
+          config = {
+            assist.termSearch.fuel = 1800;
+            check.command = "clippy";
+            completion.termSearch.enable = true;
+            diagnostics.experimental.enable = true;
+            hover.memoryLayout.niches = true;
+            hover.show.traitAssocItems = 3;
+            inlayHints.closureCaptureHints.enable = true;
+          };
+        };
       };
 
       language = [
@@ -83,17 +90,11 @@
           formatter = {
             command = "cargo fmt";
           };
-          # language-servers = [ "rust-analyzer" "helix-gpt" ];
           indent = { tab-width = 2; unit = "  "; };
         }
         {
           name = "wgsl";
-          # language-servers = [ "helix-gpt" ];
           indent = { tab-width = 2; unit = "  "; };
-        }
-        {
-          name = "nix";
-          # language-servers = [ "nil" "helix-gpt" ];
         }
         {
           name = "surrealdb";
