@@ -23,7 +23,7 @@
 
     typer # typing test
     speedtest-cli # for testing network speed
-    neofetch # :sunglasses:
+    fastfetch # rip neofetch :(
     protonvpn-cli # proton vpn
 
     # my programs

@@ -7,6 +7,7 @@
       cleanup-dev = "rm -rf ~/github/*/{.direnv/,result} ~/playground/*/{.direnv/,result}";
       clr = "clear";
       gu = "gitui";
+      neofetch = "fastfetch";
       l = "eza --all --long --header --total-size --git --git-repos --mounts --hyperlink";
       ls = "eza";
       q = "exit";
