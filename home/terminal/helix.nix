@@ -1,10 +1,18 @@
-{ pkgs, ... }: {
+{ pkgs, helix-fork, ... }: let
+  copilot-wrapped = pkgs.writeShellScriptBin "copilot" ''
+    ${pkgs.nodejs}/bin/node ${pkgs.vimPlugins.copilot-vim}/dist/language-server.js $@
+  '';
+in {
   home.packages = with pkgs; [
     nil # nix lsp
+    copilot-wrapped
   ];
+
+  programs.zsh.shellAliases.hx = "hx -a";
 
   programs.helix = {
     enable = true;
+    package = helix-fork.packages.aarch64-linux.default;
     
     settings = {
       # theme = "catppuccin_macchiato";
@@ -58,6 +66,7 @@
 
       keys.insert = {
         "S-tab" = "unindent";
+        "C-y" = "copilot_apply_completion";
       };
 
       keys.normal = {

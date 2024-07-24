@@ -15,6 +15,9 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    helix-fork = {
+      url = "github:AlexanderDickie/helix/copilot";
+    };
 
     scribe = {
       url = "github:johnbchron/scribe";
@@ -27,7 +30,10 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, apple-silicon-support, niri, nixos-generators, ... }@inputs: 
+  outputs = {
+    self, nixpkgs, apple-silicon-support, home-manager, niri, helix-fork,
+    nixos-generators, ...
+  }@inputs: 
     let
       bumble-modules = [
         ({ modulesPath, ... }:

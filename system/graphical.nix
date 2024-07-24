@@ -33,7 +33,7 @@
         "electron-25.9.0"
       ];
       allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
-        "obsidian"
+        "obsidian" "copilot.vim"
       ];
       packageOverrides = super: let self = super.pkgs; in {
         iosevka-term = self.iosevka.override (import ../extra/iosevka.nix);
