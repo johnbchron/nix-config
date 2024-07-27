@@ -1,7 +1,17 @@
 { pkgs, ... }: {
+  programs.jujutsu = {
+    enable = true;
+    settings = {
+      user = {
+        email = "github@jlewis.sh";
+        name = "John Lewis";
+      };
+    };
+  };
+
   programs.git = {
     enable = true;
-    ignores = [ ".direnv" "result" ];
+    ignores = [ ".direnv" "result" ".jj" ];
     userName = "John Lewis";
     userEmail = "github@jlewis.sh";
 
