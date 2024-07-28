@@ -25,6 +25,7 @@
     yelp # Help view
     gnome.gnome-contacts
     gnome.gnome-initial-setup
+    gnome-calendar
   ]);
 
   nixpkgs = {
