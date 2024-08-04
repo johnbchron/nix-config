@@ -157,7 +157,7 @@
       # # Mod+TouchpadScrollUp   { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02-"; }
 
       "Mod+1".action = spawn_alacritty;
-      "Mod+2".action.spawn = [ "firefox" ];
+      "Mod+2".action.spawn = [ "floorp" ];
       "Mod+3".action.spawn = [ "obsidian" ];
       # Mod+1 { focus-workspace 1; }
       # Mod+2 { focus-workspace 2; }

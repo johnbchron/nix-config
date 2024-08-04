@@ -36,12 +36,13 @@
       allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
         "obsidian" "copilot.vim"
       ];
-      packageOverrides = super: let self = super.pkgs; in {
-        iosevka-term = self.iosevka.override (import ../extra/iosevka.nix);
-      };
+      # packageOverrides = super: let self = super.pkgs; in {
+      #   iosevka-term = self.iosevka.override (import ../extra/iosevka.nix);
+      # };
     };
     overlays = [
       niri.overlays.niri
+      (import ../extra/iosevka-overlay.nix)
     ];
   };
 

@@ -33,7 +33,7 @@
   outputs = {
     self, nixpkgs, apple-silicon-support, home-manager, niri, helix-fork,
     nixos-generators, ...
-  }@inputs: 
+  } @ inputs: 
     let
       bumble-modules = [
         ({ modulesPath, ... }:

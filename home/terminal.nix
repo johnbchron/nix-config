@@ -130,18 +130,20 @@
         truncate_to_repo = false;
       };
       direnv = {
-        format = "with [$symbol$loaded/$allowed](bold yellow) ";
         disabled = false;
-        # allowed_msg = "[a](bold green)";
-        # not_allowed_msg = "[n](bold orange)";
-        # denied_msg = "[d](bold red)";
-        # loaded_msg = "[l](bold blue)";
-        # unloaded_msg = "[u](bold red)";
+
+        format = "with [$symbol$loaded/$allowed](bold yellow) ";
         allowed_msg = "a";
         not_allowed_msg = "n";
         denied_msg = "d";
         loaded_msg = "l";
         unloaded_msg = "u";
+        # format = "with $symbol$loaded/$allowed ";
+        # allowed_msg = "[a](bold green)";
+        # not_allowed_msg = "[n](bold orange)";
+        # denied_msg = "[d](bold red)";
+        # loaded_msg = "[l](bold blue)";
+        # unloaded_msg = "[u](bold red)";
       };
       git_status = {
         deleted = "X";

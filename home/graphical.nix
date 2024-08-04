@@ -4,14 +4,18 @@
     ./graphical/dconf.nix
     ./graphical/hyprland.nix
     ./graphical/niri.nix
+    ./graphical/wezterm.nix
   ];
 
   home.packages = with pkgs; [
+    floorp
+    firefox
     ungoogled-chromium
   
     # fonts
     inter
-    iosevka-term # overriden; see `system.nix`
+    iosevka-term-custom
+    iosevka-custom
 
     # hyprland
     dunst # notifications
@@ -51,10 +55,6 @@
     gnome-tweaks
     gnomeExtensions.just-perfection
   ];
-
-  programs.firefox = {
-    enable = true;
-  };
 
   gtk = {
     enable = true;

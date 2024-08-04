@@ -1,10 +1,10 @@
-{ pkgs, ...}: {
+{ pkgs, ... }: {
   programs.alacritty = {
     enable = true;
     settings = {
       shell = {
         program = "${pkgs.zsh}/bin/zsh";
-        args = [ "-c" "zellij" ];
+        args = [ "-c" "zellij -l compact" ];
       };
     
       window = {
@@ -15,22 +15,22 @@
       
       font = {
         normal = {
-          family = "Iosevka Custom";
+          family = "Iosevka Term Custom";
           style = "SemiBold";
         };
 
         bold = {
-          family = "Iosevka Custom";
+          family = "Iosevka Term Custom";
           style = "ExtraBold";
         };
 
         italic = {
-          family = "Iosevka Custom";
+          family = "Iosevka Term Custom";
           style = "SemiBold Italic";
         };
 
         bold_italic = {
-          family = "Iosevka Custom";
+          family = "Iosevka Term Custom";
           style = "Bold Italic";
         };
 
