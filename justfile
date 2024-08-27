@@ -22,3 +22,6 @@ clean:
     just clean-nix-tmp-builds
     just clean-nix-store
     just clean-docker
+
+update-grammars:
+    nix shell nixpkgs#clang -c sh -c "hx --grammar fetch && hx --grammar build"

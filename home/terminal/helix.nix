@@ -8,6 +8,8 @@ in {
     copilot-wrapped
   ];
 
+  # launches helix mode with the copilot lsp appended
+  # this is also why we don't explicitly configure the copilot lsp
   programs.zsh.shellAliases.hx = "hx -a";
 
   programs.helix = {
@@ -15,8 +17,10 @@ in {
     package = helix-fork.packages.aarch64-linux.default;
     
     settings = {
-      # theme = "catppuccin_macchiato";
-      theme = "rose_pine";
+      theme = "kanagawa";
+      # theme = "everforest_dark";
+      # theme = "catppuccin_mocha";
+      # theme = "rose_pine";
 
       editor = {
         line-number = "relative";
