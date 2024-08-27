@@ -59,7 +59,7 @@
           ./system/graphical.nix
           ./hosts/gimli/system.nix
           apple-silicon-support.nixosModules.default
-          niri.nixosModules.niri
+          # niri.nixosModules.niri
           home-manager.nixosModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;

@@ -58,10 +58,10 @@
     enable = true;
     xwayland.enable = true;
   };
-  programs.niri = {
-    enable = true;
-    package = pkgs.niri-unstable;
-  };
+  # programs.niri = {
+  #   enable = true;
+  #   package = pkgs.niri-unstable;
+  # };
 
   # daemons
   programs.dconf.enable = true;
