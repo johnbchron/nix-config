@@ -23,6 +23,7 @@
       url = "github:johnbchron/scribe";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    tikv-explorer.url = "github:johnbchron/tikv-explorer";
 
     nixos-generators = {
       url = "github:nix-community/nixos-generators";

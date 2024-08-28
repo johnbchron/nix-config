@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, tikv-explorer, ... }: {
   imports = [
     ./graphical/alacritty.nix
     ./graphical/dconf.nix
@@ -11,6 +11,10 @@
     floorp
     firefox
     ungoogled-chromium
+
+    (pkgs.writeShellScriptBin "tikv-explorer" ''
+      ${tikv-explorer.packages."${builtins.currentSystem}".server}/bin/site-server "$@"
+    '')
   
     # fonts
     inter
