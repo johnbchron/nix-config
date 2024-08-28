@@ -14,17 +14,17 @@
     gnome-photos
     gnome-tour
   ]) ++ (with pkgs; [
-    gnome.gnome-music
+    gnome-music
     # gedit # text editor
     epiphany # web browser
     geary # email reader
-    gnome.tali # poker game
-    gnome.iagno # go game
-    gnome.hitori # sudoku game
-    gnome.atomix # puzzle game
+    tali # poker game
+    iagno # go game
+    hitori # sudoku game
+    atomix # puzzle game
     yelp # Help view
-    gnome.gnome-contacts
-    gnome.gnome-initial-setup
+    gnome-contacts
+    gnome-initial-setup
     gnome-calendar
   ]);
 
