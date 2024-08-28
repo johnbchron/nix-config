@@ -94,6 +94,9 @@ in {
             inlayHints.closureCaptureHints.enable = true;
           };
         };
+        nixd = {
+          command = "${pkgs.nixd}/bin/nixd";
+        };
       };
 
       language = [
@@ -104,6 +107,10 @@ in {
             command = "cargo fmt";
           };
           indent = { tab-width = 2; unit = "  "; };
+        }
+        {
+          name = "nix";
+          language-servers = [ "nixd" ];
         }
         {
           name = "wgsl";
