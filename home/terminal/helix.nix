@@ -3,8 +3,7 @@
     ${pkgs.nodejs}/bin/node ${pkgs.vimPlugins.copilot-vim}/dist/language-server.js $@
   '';
 in {
-  home.packages = with pkgs; [
-    nil # nix lsp
+  home.packages = [
     copilot-wrapped
   ];
 
@@ -17,10 +16,10 @@ in {
     package = helix-fork.packages.aarch64-linux.default;
     
     settings = {
-      theme = "kanagawa";
+      # theme = "kanagawa";
       # theme = "everforest_dark";
       # theme = "catppuccin_mocha";
-      # theme = "rose_pine";
+      theme = "rose_pine";
 
       editor = {
         line-number = "relative";
