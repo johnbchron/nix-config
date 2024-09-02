@@ -2,8 +2,12 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    # apple-silicon-support = {
+    #   url = "github:tpwrules/nixos-apple-silicon";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     apple-silicon-support = {
-      url = "github:tpwrules/nixos-apple-silicon";
+      url = "github:rowanG077/nixos-apple-silicon/fix-mesa";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
