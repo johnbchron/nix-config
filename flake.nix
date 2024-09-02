@@ -11,10 +11,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # niri = {
+    #   url = "github:sodiboo/niri-flake";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     helix-fork = {
       url = "github:AlexanderDickie/helix/copilot";
     };
@@ -32,7 +32,7 @@
   };
 
   outputs = {
-    self, nixpkgs, apple-silicon-support, home-manager, niri, helix-fork,
+    self, nixpkgs, apple-silicon-support, home-manager, helix-fork,
     nixos-generators, ...
   } @ inputs: 
     let

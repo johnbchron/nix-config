@@ -1,4 +1,4 @@
-{ pkgs, niri, ... }: {
+{ pkgs, ... }: {
   # xserver
   services.xserver = {
     enable = true;
@@ -41,7 +41,7 @@
       # };
     };
     overlays = [
-      niri.overlays.niri
+      # niri.overlays.niri
       (import ../extra/iosevka-overlay.nix)
     ];
   };
