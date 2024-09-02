@@ -2,7 +2,7 @@
   imports = [
     ./graphical/alacritty.nix
     ./graphical/dconf.nix
-    ./graphical/hyprland.nix
+    # ./graphical/hyprland.nix
     # ./graphical/niri.nix
     ./graphical/wezterm.nix
   ];

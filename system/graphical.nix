@@ -53,11 +53,11 @@
     "XCURSOR_THEME" = "Adwaita";
   };
 
-  # wayland compositors
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
+  # # wayland compositors
+  # programs.hyprland = {
+  #   enable = true;
+  #   xwayland.enable = true;
+  # };
   # programs.niri = {
   #   enable = true;
   #   package = pkgs.niri-unstable;
