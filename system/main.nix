@@ -1,9 +1,12 @@
-{ pkgs, helix-fork, ... }: {
+{ pkgs, helix-fork, inputs, config, ... }: {
   imports = [
     ./ssh.nix
   ];
 
   nix = {
+    registry = pkgs.lib.mapAttrs (_: value: { flake = value; }) inputs;
+    nixPath = pkgs.lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
+
     extraOptions = ''
       experimental-features = nix-command flakes
     '';

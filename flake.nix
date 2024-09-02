@@ -58,7 +58,7 @@
     in {
       nixosConfigurations.gimli = nixpkgs.lib.nixosSystem rec {
         system = "aarch64-linux";
-        specialArgs = inputs // { inherit system; };
+        specialArgs = inputs // { inherit system inputs; };
         modules = [
           ./system/main.nix
           ./system/graphical.nix
@@ -74,7 +74,7 @@
                 ./home/terminal.nix
                 ./home/graphical.nix
               ]; };
-              extraSpecialArgs = inputs // { inherit system; };
+              extraSpecialArgs = inputs // { inherit system inputs; };
             };
           }
         ];
