@@ -23,5 +23,9 @@ clean:
     just clean-nix-store
     just clean-docker
 
+vm:
+    nixos-rebuild build-vm --flake .#generic
+    ./result/bin/run-nixos-vm
+
 update-grammars:
     nix shell nixpkgs#clang -c sh -c "hx --grammar fetch && hx --grammar build"

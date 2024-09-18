@@ -33,15 +33,8 @@
       permittedInsecurePackages = [
         "electron-25.9.0"
       ];
-      allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
-        "obsidian" "copilot.vim"
-      ];
-      # packageOverrides = super: let self = super.pkgs; in {
-      #   iosevka-term = self.iosevka.override (import ../extra/iosevka.nix);
-      # };
     };
     overlays = [
-      # niri.overlays.niri
       (import ../extra/iosevka-overlay.nix)
     ];
   };
@@ -52,16 +45,6 @@
     # this is to fix cursor icons for some wayland apps
     "XCURSOR_THEME" = "Adwaita";
   };
-
-  # # wayland compositors
-  # programs.hyprland = {
-  #   enable = true;
-  #   xwayland.enable = true;
-  # };
-  # programs.niri = {
-  #   enable = true;
-  #   package = pkgs.niri-unstable;
-  # };
 
   # daemons
   programs.dconf.enable = true;

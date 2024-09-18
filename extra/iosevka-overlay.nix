@@ -8,8 +8,13 @@ super: prev: let
       l = "serifed-asymmetric";
       y = "cursive-serifless";
       z = "curly-serifless";
+
+      capital-g = "toothed-serifless-capped";
+      capital-m = "hanging-serifless";
+
       six = "straight-bar";
       nine = "straight-bar";
+
       # punctuation-dot = "round";
       asterisk = "turn-hex-high";
       # underscore = "low";
@@ -18,6 +23,7 @@ super: prev: let
       # ampersand = "closed";
       question = "smooth";
       # micro-sign = "tailed-serifless";
+
       lig-equal-chain = "without-notch";
       lig-hyphen-chain = "without-notch";
       # lig-double-arrow-bar = "without-notch";

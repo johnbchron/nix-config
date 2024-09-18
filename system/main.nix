@@ -25,6 +25,14 @@
     };
   };
 
+  nixpkgs = {
+    config = {
+      allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+        "obsidian" "copilot.vim"
+      ];
+    };
+  };
+
   time.timeZone = "America/Chicago";
   # time.timeZone = "Europe/Zurich";
 
