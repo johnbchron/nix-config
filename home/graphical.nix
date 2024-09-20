@@ -1,4 +1,4 @@
-{ pkgs, tikv-explorer, ... }: {
+{ pkgs, tikv-explorer, system, ... }: {
   imports = [
     ./graphical/alacritty.nix
     ./graphical/dconf.nix
@@ -13,7 +13,7 @@
     ungoogled-chromium
 
     (pkgs.writeShellScriptBin "tikv-explorer" ''
-      ${tikv-explorer.packages."${builtins.currentSystem}".server}/bin/site-server "$@"
+      ${tikv-explorer.packages."${system}".server}/bin/site-server "$@"
     '')
   
     # fonts
