@@ -1,6 +1,6 @@
 { lib, ... }: {
   dconf.settings = let
-    "background-uri" = "file:///home/jlewis/.local/share/backgrounds/2024-07-21-12-18-23-IMG_6573.png";
+    background-uri = "file://${../../media/background.png}";
   in with lib.hm.gvariant; {
     "ca/desrt/dconf-editor" = {
       saved-pathbar-path = "/org/gnome/desktop/wm/preferences/";
