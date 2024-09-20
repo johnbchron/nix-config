@@ -69,7 +69,6 @@
           ];
           inherit system;
         })
-        { users.users.jlewis.password = "password"; }
       ];
     });
   };

@@ -33,6 +33,15 @@
     };
   };
 
+  # only used when building a VM
+  virtualisation.vmVariant = {
+    users.users.jlewis.password = "password";
+    virtualisation = {
+      memorySize = 8192;
+      cores = 4;
+    };
+  };
+
   time.timeZone = "America/Chicago";
   # time.timeZone = "Europe/Zurich";
 
