@@ -2,38 +2,6 @@
   dconf.settings = let
     background-uri = "file://${../../media/background.png}";
   in with lib.hm.gvariant; {
-    "ca/desrt/dconf-editor" = {
-      saved-pathbar-path = "/org/gnome/desktop/wm/preferences/";
-      saved-view = "/org/gnome/desktop/";
-      show-warning = false;
-    };
-
-    "org/gnome/calculator" = {
-      accuracy = 9;
-      angle-units = "degrees";
-      base = 10;
-      button-mode = "advanced";
-      number-format = "automatic";
-      show-thousands = false;
-      show-zeroes = false;
-      source-currency = "DZD";
-      source-units = "degree";
-      target-currency = "DZD";
-      target-units = "degree";
-      window-maximized = false;
-      window-size = mkTuple [ 680 664 ];
-      word-size = 64;
-    };
-
-    "org/gnome/cheese" = {
-      burst-delay = 1000;
-      camera = "FaceTime HD Camera (V4L2)";
-      photo-x-resolution = 1920;
-      photo-y-resolution = 1440;
-      video-x-resolution = 1920;
-      video-y-resolution = 1080;
-    };
-
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
@@ -137,12 +105,6 @@
 
     "org/gnome/mutter/wayland/keybindings" = {
       restore-shortcuts = [ "<Super>Escape" ];
-    };
-
-    "org/gnome/nautilus/preferences" = {
-      default-folder-viewer = "icon-view";
-      migrated-gtk-settings = true;
-      search-filter-time-type = "last_modified";
     };
 
     "org/gnome/settings-daemon/plugins/power" = {
