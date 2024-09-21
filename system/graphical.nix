@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, tikv-explorer, system, ... }: {
   # xserver
   services.xserver = {
     enable = true;
@@ -36,6 +36,13 @@
     };
     overlays = [
       (import ../extra/iosevka-overlay.nix)
+      (final: prev: let 
+        tikv-explorer-wrapped = (pkgs.writeShellScriptBin "tikv-explorer" ''
+          ${tikv-explorer.packages."${system}".server}/bin/site-server "$@"
+        '');
+      in {
+        tikv-explorer = tikv-explorer-wrapped;
+      })
     ];
   };
 

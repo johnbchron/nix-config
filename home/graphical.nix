@@ -1,4 +1,4 @@
-{ pkgs, tikv-explorer, system, ... }: {
+{ pkgs, system, ... }: {
   imports = [
     ./graphical/alacritty.nix
     ./graphical/dconf.nix
@@ -12,9 +12,8 @@
     firefox
     ungoogled-chromium
 
-    (pkgs.writeShellScriptBin "tikv-explorer" ''
-      ${tikv-explorer.packages."${system}".server}/bin/site-server "$@"
-    '')
+    # first-party overlay-supplied apps
+    tikv-explorer
   
     # fonts
     inter
