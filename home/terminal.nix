@@ -55,11 +55,6 @@
     };
   };
 
-  # github cli
-  programs.gh = {
-    enable = true;
-  };
-
   # gpg
   programs.gpg = {
     enable = true;
@@ -153,12 +148,6 @@
         format = "via [$symbol$state]($style) ";
       };
     };
-    enableZshIntegration = true;
-  };
-
-  # extra smart cd command
-  programs.zoxide = {
-    enable = true;
     enableZshIntegration = true;
   };
 
