@@ -8,57 +8,41 @@
 
   home.packages = with pkgs; [
     # basic shell utils
-    git # version control
-    unzip # unzips zip archives
-    gzip # zips gz archives
-    fzf # generic fuzzy finder
-    btop # pretty system monitor
-    bat # cat but fancy
-    eza # ls but fancy
-    just # command runner
-    wget # http fetching
-    curl # http fetching
-    file # provides file info
-    jq # queries json
+    just file fzf
+
+    # archives
+    unzip gzip 
+
+    # http & friends
+    curl wget jq
 
     typer # typing test
     speedtest-cli # for testing network speed
     fastfetch # rip neofetch :(
     protonvpn-cli # proton vpn
-
-    # my programs
-    # scribe.packages.${system}.default
   ];
 
   # shell history
-  programs.atuin = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+  programs.atuin.enable = true;
 
-  # system monitor
-  programs.btop = {
-    enable = true;
-  };
+  # replacement for `cat`
+  programs.bat.enable = true;
 
-  # btop alternative
-  programs.bottom = {
-    enable = true;
-  };
+  # system monitors
+  programs.btop.enable = true;
+  programs.bottom.enable = true;
 
   # automatic project environments
   programs.direnv = {
     enable = true;
-    enableZshIntegration = true;
-    nix-direnv = {
-      enable = true;
-    };
+    nix-direnv.enable = true;
   };
 
+  # replacement for `ls`
+  programs.eza.enable = true;
+
   # gpg
-  programs.gpg = {
-    enable = true;
-  };
+  programs.gpg.enable = true;
 
   # gpg agent
   services.gpg-agent = {
