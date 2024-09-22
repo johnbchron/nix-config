@@ -27,5 +27,10 @@ vm:
     nixos-rebuild build-vm --flake .#generic
     ./result/bin/run-nixos-vm
 
+vm-graphical:
+    nixos-rebuild build-vm --flake .#generic-graphical
+    ./result/bin/run-nixos-vm
+
+
 update-grammars:
     nix shell nixpkgs#clang -c sh -c "hx --grammar fetch && hx --grammar build"

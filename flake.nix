@@ -61,6 +61,24 @@
       specialArgs = inputs // { inherit system inputs; };
       modules = [
         ./system/main.nix
+        home-manager.nixosModules.home-manager
+        (hm-as-nixos-module {
+          modules = [
+            ./home/main.nix
+            ./home/terminal.nix
+          ];
+          inherit system;
+        })
+      ];
+    });
+
+    nixosConfigurations.generic-graphical = nixpkgs.lib.nixosSystem (let
+      system = "aarch64-linux";
+    in {
+      inherit system;
+      specialArgs = inputs // { inherit system inputs; };
+      modules = [
+        ./system/main.nix
         ./system/graphical.nix
         home-manager.nixosModules.home-manager
         (hm-as-nixos-module {
