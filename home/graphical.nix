@@ -1,4 +1,4 @@
-{ pkgs, system, ... }: {
+{ pkgs, ... }: {
   imports = [
     ./graphical/alacritty.nix
     ./graphical/dconf.nix
