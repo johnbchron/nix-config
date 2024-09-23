@@ -17,7 +17,7 @@
     curl wget jq
 
     typer # typing test
-    speedtest-cli # for testing network speed
+    cfspeedtest # for testing network speed
     fastfetch # rip neofetch :(
     protonvpn-cli # proton vpn
   ];

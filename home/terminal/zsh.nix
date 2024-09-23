@@ -11,6 +11,7 @@
       l = "eza --all --long --header --total-size --git --git-repos --mounts --hyperlink";
       ls = "eza";
       q = "exit";
+      speed = "cfspeedtest";
       tree = "eza --tree --all --long --header --total-size --git --git-repos --mounts --hyperlink";
       treeg = tree + " --git-ignore";
       with-rust = "nix develop \"/home/jlewis/github/with-rust\" --command $SHELL";
