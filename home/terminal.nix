@@ -51,27 +51,8 @@
     enableSshSupport = true;
   };
 
-  # irc/matrix client
-  programs.tiny = {
-    enable = true;
-    settings = {
-      servers = [
-        {
-          addr = "irc.oftc.net";
-          port = 6697;
-          tls = true;
-          realname = "johnbchron";
-          nicks = [ "john" ];
-
-          join = [ "#asahi" ];
-        }
-      ];
-      defaults = {
-        realname = "johnbchron";
-        nicks = [ "john" ];
-      };
-    };
-  };
+  # replacement for `grep`
+  programs.ripgrep.enable = true;
 
   # spotify
   programs.spotify-player = {
@@ -133,6 +114,28 @@
       };
     };
     enableZshIntegration = true;
+  };
+
+  # irc/matrix client
+  programs.tiny = {
+    enable = true;
+    settings = {
+      servers = [
+        {
+          addr = "irc.oftc.net";
+          port = 6697;
+          tls = true;
+          realname = "johnbchron";
+          nicks = [ "john" ];
+
+          join = [ "#asahi" ];
+        }
+      ];
+      defaults = {
+        realname = "johnbchron";
+        nicks = [ "john" ];
+      };
+    };
   };
 
   # terminal multiplexer
