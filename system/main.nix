@@ -42,8 +42,8 @@
     };
   };
 
-  time.timeZone = "America/Chicago";
-  # time.timeZone = "Europe/Zurich";
+  # time.timeZone = "America/Chicago";
+  time.timeZone = "Europe/Zurich";
 
   # internationalization
   i18n = {
