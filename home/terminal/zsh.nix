@@ -6,6 +6,7 @@
       e = "exit";
       cleanup-dev = "rm -rf ~/github/*/{.direnv/,result} ~/playground/*/{.direnv/,result}";
       clr = "clear";
+      daily = "command hx \"~/obsidian/main/Daily Notes/$(date +'%Y-%m-%d').md\"";
       gu = "gitui";
       neofetch = "fastfetch";
       l = "eza --all --long --header --total-size --git --git-repos --mounts --hyperlink";
