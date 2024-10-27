@@ -35,13 +35,25 @@
       ];
     };
     overlays = [
+      # iosevka
       (import ../extra/iosevka-overlay.nix)
+      # tikv-explorer wrapper
       (final: prev: let 
         tikv-explorer-wrapped = (pkgs.writeShellScriptBin "tikv-explorer" ''
           ${tikv-explorer.packages."${system}".server}/bin/site-server "$@"
         '');
       in {
         tikv-explorer = tikv-explorer-wrapped;
+      })
+      # steam from x86_64
+      (self: super: let
+        x86pkgs = import pkgs.path { system = "x86_64-linux";
+          config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+            "steam" "steam-original" "steam-runtime" "steam-unwrapped"
+          ];
+        };
+      in {
+        inherit (x86pkgs) steam steam-run;
       })
     ];
   };

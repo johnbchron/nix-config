@@ -66,6 +66,7 @@
         audio_cache = true;
         normalization = true;
       };
+      # customized weirdly because of iosevka
       cover_img_length = 12;
       cover_img_width = 5;
     };
@@ -75,11 +76,11 @@
   programs.starship = {
     enable = true;
     settings = {
-      battery = {
-        full_symbol = "🔋 ";
-        charging_symbol = "⚡️ ";
-        discharging_symbol = "💀 ";
-      };
+      # battery = {
+      #   full_symbol = "🔋 ";
+      #   charging_symbol = "⚡️ ";
+      #   discharging_symbol = "💀 ";
+      # };
       character = {
         success_symbol = "[ <->>](bold green)";
         error_symbol = "[ <](bold green)[-](bold red)[>>](bold green)";

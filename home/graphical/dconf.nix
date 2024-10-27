@@ -18,7 +18,7 @@
     };
 
     "org/gnome/desktop/interface" = {
-      clock-format = "24h";
+      clock-format = "12h";
       clock-show-date = true;
       clock-show-weekday = true;
       color-scheme = "prefer-dark";

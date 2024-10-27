@@ -32,6 +32,7 @@
     cage
 
     # other apps
+    anki # flashcards
     obsidian # notes & stuff
     rpi-imager # disk imaging
     obs-studio # recording & streaming
@@ -57,6 +58,9 @@
     # gnome stuff
     gnome-tweaks
     gnomeExtensions.just-perfection
+
+    # gaming
+    steam steam-run bubblewrap
   ];
 
   gtk = {
@@ -66,5 +70,4 @@
       name = "Adwaita";
     };
   };
-
 }

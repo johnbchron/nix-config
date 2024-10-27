@@ -85,12 +85,24 @@ in {
         rust-analyzer = {
           config = {
             assist.termSearch.fuel = 1800;
-            check.command = "clippy";
+            check = {
+              command = "clippy";
+              features = "all";
+            };
             completion.termSearch.enable = true;
             diagnostics.experimental.enable = true;
-            hover.memoryLayout.niches = true;
-            hover.show.traitAssocItems = 3;
-            inlayHints.closureCaptureHints.enable = true;
+            hover = {
+              memoryLayout.niches = true;
+              show.traitAssocItems = 3;
+            };
+
+            inlayHints = {
+              closureCaptureHints.enable = true;
+              # implicitDrops.enable = true;
+              maxLength = 20;
+            };
+
+            procMacro.ignored = { leptos-macro = "server"; };
           };
         };
         nixd = {
