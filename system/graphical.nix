@@ -53,7 +53,7 @@
           ];
         };
       in {
-        inherit (x86pkgs) steam steam-run;
+        inherit (x86pkgs) steam steam-original steam-runtime steam-unwrapped steam-run;
       })
     ];
   };
@@ -64,6 +64,14 @@
     # this is to fix cursor icons for some wayland apps
     "XCURSOR_THEME" = "Adwaita";
   };
+
+  fonts.packages = with pkgs; [
+    inter # google-fonts
+    iosevka-term-custom
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
+    # iosevka-custom
+  ];
 
   # daemons
   programs.dconf.enable = true;

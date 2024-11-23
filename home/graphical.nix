@@ -15,11 +15,6 @@
     # first-party overlay-supplied apps
     tikv-explorer
   
-    # fonts
-    inter
-    iosevka-term-custom
-    iosevka-custom
-
     # hyprland
     dunst # notifications
     rofi # app launcher
@@ -35,7 +30,7 @@
     anki # flashcards
     obsidian # notes & stuff
     rpi-imager # disk imaging
-    obs-studio # recording & streaming
+    # obs-studio # recording & streaming
     blender # video editing & compositing
     qdirstat # disk space usage 
     vlc # video playback
@@ -46,6 +41,7 @@
     fragments # torrents
     inkscape # vector editing
     dconf-editor # dconf obv
+    signal-desktop # messaging
     # discordo # discord tui
 
     # games
@@ -60,7 +56,7 @@
     gnomeExtensions.just-perfection
 
     # gaming
-    steam steam-run bubblewrap
+    # steam steam-run
   ];
 
   gtk = {

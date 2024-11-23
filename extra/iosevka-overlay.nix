@@ -55,6 +55,12 @@ super: prev: let
     inherits = "ss04";
 
     design = {
+      f = "serifless";
+      j = "serifed";
+      l = "serifed";
+      q = "diagonal-tailed-serifless";
+      t = "flat-hook";
+    
       braille-dot = "square";
 
       asterisk = "turn-hex-high";
@@ -75,6 +81,10 @@ super: prev: let
     variants = menlo-based;
   };
 in {
+  iosevka-custom = prev.iosevka.override  {
+    privateBuildPlan = buildPlan;
+    set = "Custom";
+  };
   iosevka-term-custom = prev.iosevka.override  {
     privateBuildPlan = buildPlan // {
       family = "Iosevka Term Custom";
@@ -82,9 +92,5 @@ in {
       noLigation = true;
     };
     set = "TermCustom";
-  };
-  iosevka-custom = prev.iosevka.override  {
-    privateBuildPlan = buildPlan;
-    set = "Custom";
   };
 }

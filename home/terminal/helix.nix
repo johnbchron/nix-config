@@ -74,6 +74,8 @@ in {
 
       keys.normal = {
         "q" = ":quit-all";
+        "C-j" = ["extend_to_line_bounds" "delete_selection" "paste_after"];
+        "C-k" = ["extend_to_line_bounds" "delete_selection" "move_line_up" "paste_before"];
       };
       keys.select = {
         "q" = ":quit-all";
@@ -90,9 +92,11 @@ in {
               features = "all";
             };
             completion.termSearch.enable = true;
-            diagnostics.experimental.enable = true;
+            # # causes issues with `async_trait` type mismatch:
+            # # https://github.com/rust-lang/rust-analyzer/issues/11815
+            # diagnostics.experimental.enable = true;
             hover = {
-              memoryLayout.niches = true;
+              # memoryLayout.niches = true;
               show.traitAssocItems = 3;
             };
 

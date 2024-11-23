@@ -25,6 +25,8 @@
   networking = {
     networkmanager.enable = true;
     hostName = "gimli";
+    # for viewing local development from mobile
+    firewall.allowedTCPPorts = [ 3000 ];
   };
 
   environment.systemPackages = with pkgs; [

@@ -3,10 +3,11 @@
     enable = true;
     history.size = 3000;
     shellAliases = rec {
-      e = "exit";
+      cg = "cd $(git rev-parse --show-toplevel)";
       cleanup-dev = "rm -rf ~/github/*/{.direnv/,result} ~/playground/*/{.direnv/,result}";
       clr = "clear";
       daily = "command hx \"~/obsidian/main/Daily Notes/$(date +'%Y-%m-%d').md\"";
+      e = "exit";
       gu = "gitui";
       neofetch = "fastfetch";
       l = "eza --all --long --header --total-size --git --git-repos --mounts --hyperlink";
