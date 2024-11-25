@@ -45,16 +45,6 @@
       in {
         tikv-explorer = tikv-explorer-wrapped;
       })
-      # steam from x86_64
-      (self: super: let
-        x86pkgs = import pkgs.path { system = "x86_64-linux";
-          config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
-            "steam" "steam-original" "steam-runtime" "steam-unwrapped"
-          ];
-        };
-      in {
-        inherit (x86pkgs) steam steam-original steam-runtime steam-unwrapped steam-run;
-      })
     ];
   };
 

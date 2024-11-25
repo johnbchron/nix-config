@@ -54,9 +54,6 @@
     # gnome stuff
     gnome-tweaks
     gnomeExtensions.just-perfection
-
-    # gaming
-    # steam steam-run
   ];
 
   gtk = {
