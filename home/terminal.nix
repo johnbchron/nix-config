@@ -144,6 +144,8 @@
     enable = true;
     settings = {
       theme = "catppuccin-mocha";
+      default_layout = "compact";
+      session_serialization = false;
       ui = {
         pane_frames = {
           rounded_corners = true;

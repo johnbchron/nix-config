@@ -4,7 +4,7 @@
     settings = {
       terminal.shell = {
         program = "${pkgs.zsh}/bin/zsh";
-        args = [ "-c" "zellij -l compact" ];
+        args = [ "-c" "zellij" ];
       };
     
       window = {
