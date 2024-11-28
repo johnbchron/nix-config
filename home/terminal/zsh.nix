@@ -4,6 +4,7 @@
     history.size = 3000;
     shellAliases = let
       tree = "eza --tree --all --long --header --total-size --git --git-repos --mounts --hyperlink";
+
       zellij-project-env = pkgs.writeShellScript "zellij-project-env" ''
         SESSION_NAME=$(zellij list-sessions -r -s | head -n 1)
         PROJECT_NAME=$1
@@ -28,6 +29,7 @@
           --session $SESSION_NAME \
           action focus-previous-pane
       '';
+
     in {
       cg = "cd $(git rev-parse --show-toplevel)";
       cleanup-dev = "rm -rf ~/github/*/{.direnv/,result} ~/playground/*/{.direnv/,result}";
@@ -44,6 +46,7 @@
       inherit tree;
       treeg = tree + " --git-ignore";
       with-rust = "nix develop \"/home/jlewis/github/with-rust\" --command $SHELL";
+      with-typst = "nix develop \"/home/jlewis/github/with-typst\" --command $SHELL";
     };
     oh-my-zsh = {
       enable = true;
