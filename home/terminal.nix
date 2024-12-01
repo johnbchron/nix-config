@@ -20,6 +20,8 @@
     cfspeedtest # for testing network speed
     fastfetch # rip neofetch :(
     protonvpn-cli # proton vpn
+
+    comma
   ];
 
   # shell history
