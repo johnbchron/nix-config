@@ -20,11 +20,11 @@
     rofi # app launcher
     iwgtk # networking
 
-    # niri
-    wl-clipboard
-    wayland-utils
-    libsecret
-    cage
+    # # niri
+    # wl-clipboard
+    # wayland-utils
+    # libsecret
+    # cage
 
     # other apps
     anki # flashcards
