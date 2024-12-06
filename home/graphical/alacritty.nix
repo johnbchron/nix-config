@@ -8,33 +8,20 @@
       };
     
       window = {
-        opacity = 1.0;
+        # opacity = 0.94;
+        # blur = true;
         startup_mode = "Fullscreen";
         # option_as_alt = "Both";
       };
       
       font = {
-        normal = {
-          family = "Iosevka Term Custom";
-          style = "SemiBold";
-        };
-
-        bold = {
-          family = "Iosevka Term Custom";
-          style = "ExtraBold";
-        };
-
-        italic = {
-          family = "Iosevka Term Custom";
-          style = "SemiBold Italic";
-        };
-
-        bold_italic = {
-          family = "Iosevka Term Custom";
-          style = "Bold Italic";
-        };
+        normal =      { family = "Iosevka Term Custom"; style = "SemiBold"; };
+        bold =        { family = "Iosevka Term Custom"; style = "ExtraBold"; };
+        italic =      { family = "Iosevka Term Custom"; style = "SemiBold Italic"; };
+        bold_italic = { family = "Iosevka Term Custom"; style = "Bold Italic"; };
 
         size = 14;
+        # builtin_box_drawing = false;
       };
 
       # catppuccin mocha theme

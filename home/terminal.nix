@@ -16,12 +16,17 @@
     # http & friends
     curl wget jq
 
+    # runs nixpkgs items
+    comma
+
+    # asahi vm stuff
+    distrobox
+
+    # misc
     typer # typing test
     cfspeedtest # for testing network speed
     fastfetch # rip neofetch :(
     protonvpn-cli # proton vpn
-
-    comma
   ];
 
   # shell history
@@ -78,11 +83,11 @@
   programs.starship = {
     enable = true;
     settings = {
-      # battery = {
-      #   full_symbol = "🔋 ";
-      #   charging_symbol = "⚡️ ";
-      #   discharging_symbol = "💀 ";
-      # };
+      battery = {
+        full_symbol = "🔋 ";
+        charging_symbol = "⚡️ ";
+        discharging_symbol = "💀 ";
+      };
       character = {
         success_symbol = "[ <->>](bold green)";
         error_symbol = "[ <](bold green)[-](bold red)[>>](bold green)";
@@ -109,7 +114,7 @@
         # unloaded_msg = "[u](bold red)";
       };
       git_status = {
-        deleted = "X";
+        # deleted = "X";
       };
       nix_shell = {
         symbol = "❄️ ";
@@ -148,6 +153,7 @@
       theme = "catppuccin-mocha";
       default_layout = "compact";
       session_serialization = false;
+      # mouse_mode = false;
       ui = {
         pane_frames = {
           rounded_corners = true;

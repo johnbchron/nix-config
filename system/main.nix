@@ -88,8 +88,11 @@
 
   # daemons
   services.openssh.enable = true;
+  services.avahi.enable = true;
   services.tailscale.enable = true;
+
   virtualisation.docker.enable = true;
+  virtualisation.podman.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
