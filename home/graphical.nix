@@ -15,22 +15,11 @@
     # first-party overlay-supplied apps
     tikv-explorer
   
-    # hyprland
-    dunst # notifications
-    rofi # app launcher
-    iwgtk # networking
-
-    # # niri
-    # wl-clipboard
-    # wayland-utils
-    # libsecret
-    # cage
-
     # other apps
     anki # flashcards
     obsidian # notes & stuff
     rpi-imager # disk imaging
-    # obs-studio # recording & streaming
+    obs-studio # recording & streaming
     blender # video editing & compositing
     qdirstat # disk space usage 
     vlc # video playback
@@ -42,7 +31,6 @@
     inkscape # vector editing
     dconf-editor # dconf obv
     signal-desktop # messaging
-    # discordo # discord tui
 
     # games
     mars

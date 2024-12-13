@@ -56,11 +56,11 @@
   };
 
   fonts.packages = with pkgs; [
-    inter # google-fonts
+    inter
+    roboto
     iosevka-term-custom
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
-    # iosevka-custom
   ];
 
   # daemons
