@@ -19,10 +19,14 @@
     # runs nixpkgs items
     comma
 
+    # other utilities
+    tio # serial device tool
+
     # asahi vm stuff
     distrobox
 
     # misc
+    sl # steam locomotive
     typer # typing test
     cfspeedtest # for testing network speed
     fastfetch # rip neofetch :(

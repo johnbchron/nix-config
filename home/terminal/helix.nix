@@ -112,6 +112,10 @@ in {
         nixd = {
           command = "${pkgs.nixd}/bin/nixd";
         };
+        harper = {
+          command = "${pkgs.harper}/bin/harper-ls";
+          args = [ "--stdio" ];
+        };
       };
 
       language = [
@@ -138,6 +142,10 @@ in {
           comment-tokens = "--";
           indent = { tab-width = 2; unit = "  "; };
           grammar = "surrealdb";
+        }
+        {
+          name = "markdown";
+          language-servers = [ "marksman" "harper" ];
         }
       ];
 
