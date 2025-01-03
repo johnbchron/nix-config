@@ -6,7 +6,14 @@
   # bootloader
   boot = {
     binfmt.emulatedSystems = [ "x86_64-linux" "i686-linux" ];
-    kernelParams = [ "apple_dcp.show_notch=1" ];
+    kernelParams = [
+      "apple_dcp.show_notch=1"
+
+      "zswap.enabled=1"
+      "zswap.compressor=zstd"
+      "zswap.zpool=zsmalloc"
+      "zswap.max_pool_percent=50"
+    ];
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = false;
