@@ -8,7 +8,7 @@
 
   home.packages = with pkgs; [
     # basic shell utils
-    just file fzf
+    just file fzf gitoxide
 
     # archives
     unzip gzip 
@@ -34,7 +34,13 @@
   ];
 
   # shell history
-  programs.atuin.enable = true;
+  programs.atuin = {
+    settings = {
+      inline_height = 0;
+      enter_accept = true;
+    };
+    enable = true;
+  };
 
   # replacement for `cat`
   programs.bat.enable = true;
