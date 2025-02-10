@@ -6,6 +6,27 @@
         email = "github@jlewis.sh";
         name = "John Lewis";
       };
+
+      templates = {
+        log = "builtin_log_comfortable";
+
+        # added another newline before the diff summary
+        draft_commit_description = ''
+          concat(
+            description,
+            surround(
+              "\n\nJJ: This commit contains the following changes:\n", "",
+              indent("JJ:     ", diff.summary()),
+            ),
+          )
+        '';
+      };
+
+      ui = {
+        default-command = [ "log" ];
+
+        diff.tool = ["${pkgs.difftastic}/bin/difft" "--color=always" "$left" "$right"];
+      };
     };
   };
 

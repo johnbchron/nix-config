@@ -19,6 +19,10 @@
     # runs nixpkgs items
     comma
 
+    # networking
+    nmap
+    inetutils
+
     # other utilities
     tio # serial device tool
 

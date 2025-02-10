@@ -88,7 +88,13 @@
 
   # daemons
   services.openssh.enable = true;
-  services.avahi.enable = true;
+
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
   services.tailscale.enable = true;
 
   virtualisation.docker.enable = true;

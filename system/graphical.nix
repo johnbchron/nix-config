@@ -58,7 +58,11 @@
   fonts.packages = with pkgs; [
     inter
     roboto
+    oswald
+
+    iosevka-custom
     iosevka-term-custom
+
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
   ];
