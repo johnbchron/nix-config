@@ -2,8 +2,11 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    iosevka-pin.url = "github:NixOS/nixpkgs?rev=9d3ae807ebd2981d593cddd0080856873139aa40";
+
     apple-silicon-support = {
-      url = "github:tpwrules/nixos-apple-silicon";
+      # url = "github:tpwrules/nixos-apple-silicon";
+      url = "github:schphe/nixos-apple-silicon";
     };
 
     home-manager = {
@@ -22,6 +25,7 @@
   };
 
   outputs = { nixpkgs, apple-silicon-support, home-manager, ... } @ inputs: let
+    # function to produce a nixos module from hm modules
     hm-as-nixos-module = { modules, system }: {
       home-manager = {
         useGlobalPkgs = true;

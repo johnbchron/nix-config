@@ -20,12 +20,12 @@
     obsidian # notes & stuff
     rpi-imager # disk imaging
     obs-studio # recording & streaming
-    # blender # video editing & compositing
+    blender # video editing & compositing
     qdirstat # disk space usage 
     vlc # video playback
     fstl # viewing stl files
     gimp # image editing
-    libreoffice-still # office stuff
+    # libreoffice-still # office stuff
     audacity # audio editing
     fragments # torrents
     inkscape # vector editing

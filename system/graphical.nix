@@ -1,4 +1,4 @@
-{ pkgs, tikv-explorer, system, ... }: {
+{ pkgs, tikv-explorer, iosevka-pin, system, ... }: {
   # xserver
   services.xserver = {
     enable = true;
@@ -34,9 +34,17 @@
         "electron-25.9.0"
       ];
     };
-    overlays = [
-      # iosevka
-      (import ../extra/iosevka-overlay.nix)
+    overlays = let
+      # pinned nixpkgs for iosevka, with the customizations
+      iosevka-pin-pkgs = import iosevka-pin {
+        inherit system;
+        overlays = [ (import ../extra/iosevka-overlay.nix) ];
+      };
+    in [
+      # pull in the customized iosevka packages from the pinned nixpkgs
+      (final: prev: {
+        inherit (iosevka-pin-pkgs) iosevka-custom iosevka-term-custom;
+      })
       # tikv-explorer wrapper
       (final: prev: let 
         tikv-explorer-wrapped = (pkgs.writeShellScriptBin "tikv-explorer" ''
@@ -70,6 +78,6 @@
   # daemons
   programs.dconf.enable = true;
   services.printing.enable = true;
-  # this isn't really graphical but it's only necessary on a physical machine
+  # # this isn't really graphical but it's only necessary on a physical machine
   services.usbmuxd.enable = true;
 }

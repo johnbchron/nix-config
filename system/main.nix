@@ -67,7 +67,7 @@
     users.jlewis = {
       isNormalUser = true;
       description = "John Lewis";
-      extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" ];
+      extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" "peroxide" ];
     };
   };
 
@@ -96,6 +96,10 @@
   };
 
   services.tailscale.enable = true;
+  services.peroxide = {
+    enable = true;
+    logLevel = "Debug";
+  };
 
   virtualisation.docker.enable = true;
   virtualisation.podman.enable = true;

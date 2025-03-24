@@ -27,6 +27,7 @@
     useExperimentalGPUDriver = true;
     experimentalGPUInstallMode = "replace";
     setupAsahiSound = true;
+    # extractPeripheralFirmware = false;
   };
 
   networking = {

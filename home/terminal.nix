@@ -25,6 +25,8 @@
 
     # other utilities
     tio # serial device tool
+    gurk-rs # signal client
+    peroxide
 
     # asahi vm stuff
     distrobox
@@ -70,6 +72,33 @@
     enable = true;
     pinentryPackage = pkgs.pinentry-gnome3;
     enableSshSupport = true;
+  };
+
+  accounts.email.certificatesFile = "/var/lib/peroxide/cert.pem";
+  accounts.email.accounts.main = {
+    primary = true;
+    address = "main@jlewis.sh";
+    realName = "John Lewis";
+    userName = "main..himalaya@jlewis.sh";
+    passwordCommand = "cat /home/jlewis/keys/peroxide_himalaya_pass";
+    
+    himalaya.enable = true;
+    thunderbird.enable = true;
+
+    imap = {
+      host = "127.0.0.1";
+      port = 1143;
+      tls.enable = false;
+    };
+    smtp = {
+      host = "127.0.0.1";
+      port = 1025;
+      tls.enable = false;
+    };
+  };
+
+  programs.himalaya = {
+    enable = true;
   };
 
   # replacement for `grep`
@@ -138,6 +167,13 @@
     enableZshIntegration = true;
   };
 
+  programs.thunderbird = {
+    enable = true;
+    profiles.jlewis = {
+      isDefault = true;
+    };
+  };
+
   # irc/matrix client
   programs.tiny = {
     enable = true;
@@ -167,6 +203,7 @@
       theme = "catppuccin-mocha";
       default_layout = "compact";
       session_serialization = false;
+      show_startup_tips = false;
       # mouse_mode = false;
       ui = {
         pane_frames = {
