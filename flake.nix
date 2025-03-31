@@ -6,7 +6,8 @@
 
     apple-silicon-support = {
       # url = "github:tpwrules/nixos-apple-silicon";
-      url = "github:schphe/nixos-apple-silicon";
+      # url = "github:schphe/nixos-apple-silicon";
+      url = "github:kitten/nixos-apple-silicon/edge";
     };
 
     home-manager = {

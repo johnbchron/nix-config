@@ -23,7 +23,7 @@
 
   # asahi
   hardware.asahi = {
-    withRust = true;
+    # withRust = true;
     useExperimentalGPUDriver = true;
     experimentalGPUInstallMode = "replace";
     setupAsahiSound = true;
