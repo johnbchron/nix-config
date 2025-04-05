@@ -23,6 +23,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     tikv-explorer.url = "github:johnbchron/tikv-explorer";
+    alacritty-theme = {
+      url = "github:alacritty/alacritty-theme";
+      flake = false;
+    };
   };
 
   outputs = { nixpkgs, apple-silicon-support, home-manager, ... } @ inputs: let

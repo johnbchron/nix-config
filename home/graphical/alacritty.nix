@@ -1,4 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, alacritty-theme, ... }: let
+  theme-name = "catppuccin_mocha";
+  theme-config = builtins.fromTOML
+    (builtins.readFile "${alacritty-theme}/themes/${theme-name}.toml");
+in {
   programs.alacritty = {
     enable = true;
     settings = {
@@ -25,11 +29,7 @@
         # builtin_box_drawing = false;
       };
 
-      # catppuccin mocha theme
-      colors = import ./alacritty_colors.nix;
-      # debug = {
-      #   render_timer = true;
-      # };
+      colors = theme-config.colors;
     };
   };
 }

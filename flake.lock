@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "alacritty-theme": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1742489164,
+        "narHash": "sha256-1KSItYOIPjJzltYZyL0nB4UtNWrjSNyihlBQp3VKaBg=",
+        "owner": "alacritty",
+        "repo": "alacritty-theme",
+        "rev": "86c578469e2bf784faf6f916883bf48349ff4f6d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "alacritty",
+        "repo": "alacritty-theme",
+        "type": "github"
+      }
+    },
     "apple-silicon-support": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -315,6 +331,7 @@
     },
     "root": {
       "inputs": {
+        "alacritty-theme": "alacritty-theme",
         "apple-silicon-support": "apple-silicon-support",
         "helix-fork": "helix-fork",
         "home-manager": "home-manager",
