@@ -26,7 +26,7 @@
     # other utilities
     tio # serial device tool
     gurk-rs # signal client
-    peroxide
+    # peroxide
 
     # asahi vm stuff
     distrobox
@@ -74,32 +74,32 @@
     enableSshSupport = true;
   };
 
-  accounts.email.certificatesFile = "/var/lib/peroxide/cert.pem";
-  accounts.email.accounts.main = {
-    primary = true;
-    address = "main@jlewis.sh";
-    realName = "John Lewis";
-    userName = "main..himalaya@jlewis.sh";
-    passwordCommand = "cat /home/jlewis/keys/peroxide_himalaya_pass";
+  # accounts.email.certificatesFile = "/var/lib/peroxide/cert.pem";
+  # accounts.email.accounts.main = {
+  #   primary = true;
+  #   address = "main@jlewis.sh";
+  #   realName = "John Lewis";
+  #   userName = "main..himalaya@jlewis.sh";
+  #   passwordCommand = "cat /home/jlewis/keys/peroxide_himalaya_pass";
     
-    himalaya.enable = true;
-    thunderbird.enable = true;
+  #   himalaya.enable = true;
+  #   thunderbird.enable = true;
 
-    imap = {
-      host = "127.0.0.1";
-      port = 1143;
-      tls.enable = false;
-    };
-    smtp = {
-      host = "127.0.0.1";
-      port = 1025;
-      tls.enable = false;
-    };
-  };
+  #   imap = {
+  #     host = "127.0.0.1";
+  #     port = 1143;
+  #     tls.enable = false;
+  #   };
+  #   smtp = {
+  #     host = "127.0.0.1";
+  #     port = 1025;
+  #     tls.enable = false;
+  #   };
+  # };
 
-  programs.himalaya = {
-    enable = true;
-  };
+  # programs.himalaya = {
+  #   enable = true;
+  # };
 
   # replacement for `grep`
   programs.ripgrep.enable = true;
