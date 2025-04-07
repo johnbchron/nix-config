@@ -1,4 +1,4 @@
-{ pkgs, helix-fork, inputs, config, ... }: {
+{ pkgs, inputs, config, ... }: {
   imports = [
     ./ssh.nix
   ];
@@ -80,13 +80,9 @@
   # set /bin/sh to dash for speeeeeed
   environment.binsh = "${pkgs.dash}/bin/dash";
 
-  environment.variables = let
-    wrappedHelix = pkgs.writeShellScriptBin "hx" ''
-      ${helix-fork.packages.aarch64-linux.default}/bin/hx -a $@
-    '';
-  in {
-    "VISUAL" = "${wrappedHelix}/bin/hx";
-    "EDITOR" = "${wrappedHelix}/bin/hx";
+  environment.variables = {
+    "VISUAL" = "${pkgs.helix}/bin/hx";
+    "EDITOR" = "${pkgs.helix}/bin/hx";
   };
 
   # daemons

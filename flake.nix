@@ -14,9 +14,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    helix-fork = {
-      url = "github:AlexanderDickie/helix/copilot";
-    };
 
     scribe = {
       url = "github:johnbchron/scribe";
