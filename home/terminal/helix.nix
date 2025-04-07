@@ -11,28 +11,34 @@ in {
 
       editor = {
         line-number = "relative";
-        mouse = true;
-        rulers = [ 80 ];
-        bufferline = "always";
+        # highlight lines with cursors
         cursorline = true;
-        # cursorcolumn = true;
+        # don't start lines following comments with a comment
+        continue-comments = false;
+        rulers = [ 80 ];
+        # always show open buffers
+        bufferline = "always";
+        # indicate modes with different colors
         color-modes = true;
-        idle-timeout = 200;
+        # idle-timeout = 200;
         text-width = 80;
+        end-of-line-diagnostics = "hint";
       
         statusline = {
-          left = [
-            "mode" "spinner" "file-name" "read-only-indicator"
-            "file-modification-indicator" "version-control"
+          right = [
+            "diagnostics" "selections" "register" "position" "file-type"
+            "file-encoding"
           ];
+
           mode.normal = "NORMAL";
           mode.insert = "INSERT";
           mode.select = "SELECT";
         };
 
         lsp = {
-          display-messages = true;
+          display-progress-messages = true;
           display-inlay-hints = true;
+          snippets = false;
         };
 
         cursor-shape = {
@@ -49,9 +55,11 @@ in {
           "<" = ">";
         };
 
-        soft-wrap = {
-          enable = true;
-          # wrap-at-text-width = true;
+        soft-wrap.enable = true;
+
+        inline-diagnostics = {
+          cursor-line = "hint";
+          other-lines = "warning";
         };
       };
 
