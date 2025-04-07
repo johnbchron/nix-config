@@ -58,8 +58,7 @@ in {
         soft-wrap.enable = true;
 
         inline-diagnostics = {
-          cursor-line = "hint";
-          other-lines = "warning";
+          cursor-line = "info";
         };
       };
 
@@ -81,19 +80,17 @@ in {
       language-server = {
         rust-analyzer = {
           config = {
-            assist.termSearch.fuel = 1800;
+            # assist.termSearch.fuel = 1800;
             check = {
               command = "clippy";
               features = "all";
             };
             completion.termSearch.enable = true;
-            # # causes issues with `async_trait` type mismatch:
-            # # https://github.com/rust-lang/rust-analyzer/issues/11815
-            # diagnostics.experimental.enable = true;
             hover = {
-              # memoryLayout.niches = true;
               show.traitAssocItems = 3;
             };
+            # prefer importing items from `self` where possible
+            imports.prefix = "self";
 
             inlayHints = {
               closureCaptureHints.enable = true;
@@ -101,7 +98,7 @@ in {
               maxLength = 20;
             };
 
-            procMacro.ignored = { leptos-macro = "server"; };
+            # procMacro.ignored = { leptos-macro = "server"; };
           };
         };
         nixd = {
