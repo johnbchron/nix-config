@@ -71,6 +71,9 @@
     };
   };
 
+  security.sudo.enable = false;
+  security.sudo-rs.enable = true;
+
   programs.nix-ld.enable = true;
   programs.zsh.enable = true;
 
