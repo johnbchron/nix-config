@@ -1,20 +1,8 @@
-{ pkgs, helix-fork, ... }: let
-  copilot-wrapped = pkgs.writeShellScriptBin "copilot" ''
-    ${pkgs.nodejs}/bin/node ${pkgs.vimPlugins.copilot-vim}/dist/language-server.js $@
-  '';
+{ pkgs, ... }: let
 in {
-  home.packages = [
-    copilot-wrapped
-  ];
-
-  # launches helix mode with the copilot lsp appended
-  # this is also why we don't explicitly configure the copilot lsp
-  programs.zsh.shellAliases.hx = "hx -a";
-
   programs.helix = {
     enable = true;
-    package = helix-fork.packages.aarch64-linux.default;
-    
+   
     settings = {
       # theme = "kanagawa";
       # theme = "everforest_dark";
@@ -69,7 +57,6 @@ in {
 
       keys.insert = {
         "S-tab" = "unindent";
-        "C-y" = "copilot_apply_completion";
       };
 
       keys.normal = {
