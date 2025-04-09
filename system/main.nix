@@ -87,6 +87,8 @@
 
   # daemons
   services.openssh.enable = true;
+  services.pipewire.enable = true;
+  services.pipewire.wireplumber.enable = true;
 
   services.avahi = {
     enable = true;
