@@ -19,9 +19,6 @@
       efi.canTouchEfiVariables = false;
     };
     m1n1CustomLogo = ../../media/hexaradialis.png;
-    kernel.sysctl = {
-      "kernel.unprivileged_userns_clone" = true;
-    };
   };
 
   # asahi

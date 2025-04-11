@@ -6,8 +6,8 @@ in {
     settings = {
       # theme = "kanagawa";
       # theme = "everforest_dark";
-      # theme = "catppuccin_mocha";
-      theme = "rose_pine";
+      theme = "catppuccin_macchiato";
+      # theme = "rose_pine";
 
       editor = {
         line-number = "relative";
