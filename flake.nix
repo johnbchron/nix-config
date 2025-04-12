@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    iosevka-pin.url = "github:NixOS/nixpkgs?rev=9d3ae807ebd2981d593cddd0080856873139aa40";
+    iosevka-pin.url = "github:NixOS/nixpkgs?rev=f675531bc7e6657c10a18b565cfebd8aa9e24c14";
 
     apple-silicon-support = {
       # url = "github:tpwrules/nixos-apple-silicon";
