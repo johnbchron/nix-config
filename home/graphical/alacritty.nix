@@ -21,9 +21,9 @@ in {
       
       font = {
         normal =      { family = "Iosevka Term Custom"; style = "SemiBold"; };
-        bold =        { family = "Iosevka Term Custom"; style = "ExtraBold"; };
+        bold =        { family = "Iosevka Term Custom"; style = "Heavy"; };
         italic =      { family = "Iosevka Term Custom"; style = "SemiBold Italic"; };
-        bold_italic = { family = "Iosevka Term Custom"; style = "Bold Italic"; };
+        bold_italic = { family = "Iosevka Term Custom"; style = "Heavy Italic"; };
 
         size = 14;
         # builtin_box_drawing = false;
