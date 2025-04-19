@@ -78,6 +78,12 @@
   security.sudo-rs.enable = true;
 
   programs.nix-ld.enable = true;
+  programs.nix-index = {
+    enable = true;
+    enableBashIntegration = false;
+    enableFishIntegration = false;
+    enableZshIntegration = false;
+  };
   programs.zsh.enable = true;
 
   # set /bin/sh to dash for speeeeeed
