@@ -21,7 +21,7 @@
     };
     tikv-explorer.url = "github:johnbchron/tikv-explorer";
     alacritty-theme = {
-      url = "github:alacritty/alacritty-theme";
+      url = "github:johnbchron/alacritty-theme";
       flake = false;
     };
   };

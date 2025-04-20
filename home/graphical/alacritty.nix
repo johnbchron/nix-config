@@ -1,5 +1,7 @@
 { pkgs, alacritty-theme, ... }: let
   theme-name = "catppuccin_mocha";
+  # theme-name = "miasma";
+
   theme-config = builtins.fromTOML
     (builtins.readFile "${alacritty-theme}/themes/${theme-name}.toml");
 in {

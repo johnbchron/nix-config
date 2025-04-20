@@ -3,15 +3,15 @@
     "alacritty-theme": {
       "flake": false,
       "locked": {
-        "lastModified": 1742489164,
-        "narHash": "sha256-1KSItYOIPjJzltYZyL0nB4UtNWrjSNyihlBQp3VKaBg=",
-        "owner": "alacritty",
+        "lastModified": 1745146764,
+        "narHash": "sha256-5TAfPHv+qCulv4FpUvK0UB6lGuR4hQuCXB+ZGDUV3Do=",
+        "owner": "johnbchron",
         "repo": "alacritty-theme",
-        "rev": "86c578469e2bf784faf6f916883bf48349ff4f6d",
+        "rev": "e0ff28bba4603d371893a9ce69e7e97e6e5aa18e",
         "type": "github"
       },
       "original": {
-        "owner": "alacritty",
+        "owner": "johnbchron",
         "repo": "alacritty-theme",
         "type": "github"
       }
