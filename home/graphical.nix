@@ -30,7 +30,7 @@
     fragments # torrents
     inkscape # vector editing
     dconf-editor # dconf obv
-    signal-desktop-source # messaging
+    signal-desktop # messaging
 
     # games
     mars

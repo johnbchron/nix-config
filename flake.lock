@@ -3,11 +3,11 @@
     "alacritty-theme": {
       "flake": false,
       "locked": {
-        "lastModified": 1745146764,
-        "narHash": "sha256-5TAfPHv+qCulv4FpUvK0UB6lGuR4hQuCXB+ZGDUV3Do=",
+        "lastModified": 1745226029,
+        "narHash": "sha256-TFomYP13Wa2VSoxKGKaTDyIj8K1/Oi4LOhR93z07Ot4=",
         "owner": "johnbchron",
         "repo": "alacritty-theme",
-        "rev": "e0ff28bba4603d371893a9ce69e7e97e6e5aa18e",
+        "rev": "22ec2c401e9197fbcfef514489a4dde82f1ba10d",
         "type": "github"
       },
       "original": {
@@ -166,11 +166,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1744987093,
-        "narHash": "sha256-IVioWVz5qVtHiqosesW7CJW//m/yADr7cVdgF1P4N8s=",
+        "lastModified": 1745128386,
+        "narHash": "sha256-xnNxL9lZC5Ez8AxTgHZZu8pYSNM34+5GD5jGSs8Vq4M=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "5e6a8203cee7cc33b2e0d9a0adb7268f46447292",
+        "rev": "f98314bb064cf8f8446c44afbadaaad2505875a7",
         "type": "github"
       },
       "original": {
