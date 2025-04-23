@@ -139,6 +139,14 @@ in {
           name = "markdown";
           language-servers = [ "marksman" "harper" ];
         }
+        {
+          name = "toml";
+          auto-format = true;
+          formatter = {
+            command = "${pkgs.taplo}/bin/taplo";
+            args = [ "fmt" "-" ];
+          };
+        }
       ];
 
       # note: in order for this grammar to work, run the following:
@@ -167,4 +175,8 @@ in {
     source = "${surql-ts-src}/queries/highlights.scm";
     target = ".config/helix/runtime/queries/surrealdb/highlights.scm";
   };
+
+  home.packages = with pkgs; [
+    taplo
+  ];
 }
