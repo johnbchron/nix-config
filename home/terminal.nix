@@ -36,7 +36,7 @@
     typer # typing test
     cfspeedtest # for testing network speed
     fastfetch # rip neofetch :(
-    protonvpn-cli # proton vpn
+    # protonvpn-cli # proton vpn
   ];
 
   # shell history
