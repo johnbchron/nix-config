@@ -80,4 +80,11 @@
   services.printing.enable = true;
   # # this isn't really graphical but it's only necessary on a physical machine
   services.usbmuxd.enable = true;
+
+  services.gnome.gnome-keyring.enable = true;
+  services.protonmail-bridge = {
+    enable = true;
+    logLevel = "debug";
+    path = with pkgs; [ pass gnome-keyring libnotify ];
+  };
 }

@@ -26,6 +26,7 @@
     # other utilities
     tio # serial device tool
     gurk-rs # signal client
+    pass gnome-keyring
     # peroxide
 
     # asahi vm stuff
@@ -36,7 +37,6 @@
     typer # typing test
     cfspeedtest # for testing network speed
     fastfetch # rip neofetch :(
-    # protonvpn-cli # proton vpn
   ];
 
   # shell history
@@ -75,31 +75,32 @@
   };
 
   # accounts.email.certificatesFile = "/var/lib/peroxide/cert.pem";
-  # accounts.email.accounts.main = {
-  #   primary = true;
-  #   address = "main@jlewis.sh";
-  #   realName = "John Lewis";
-  #   userName = "main..himalaya@jlewis.sh";
-  #   passwordCommand = "cat /home/jlewis/keys/peroxide_himalaya_pass";
+  accounts.email.accounts.main = {
+    primary = true;
+    address = "main@jlewis.sh";
+    realName = "John Lewis";
+    userName = "main@jlewis.sh";
+    passwordCommand = "cat /home/jlewis/keys/protonmail-bridge_pass";
     
-  #   himalaya.enable = true;
-  #   thunderbird.enable = true;
+    thunderbird.enable = true;
 
-  #   imap = {
-  #     host = "127.0.0.1";
-  #     port = 1143;
-  #     tls.enable = false;
-  #   };
-  #   smtp = {
-  #     host = "127.0.0.1";
-  #     port = 1025;
-  #     tls.enable = false;
-  #   };
-  # };
-
-  # programs.himalaya = {
-  #   enable = true;
-  # };
+    imap = {
+      host = "127.0.0.1";
+      port = 1143;
+      tls = {
+        enable = true;
+        # useStartTls = true;
+      };
+    };
+    smtp = {
+      host = "127.0.0.1";
+      port = 1025;
+      tls = {
+        enable = true;
+        # useStartTls = true;
+      };
+    };
+  };
 
   # replacement for `grep`
   programs.ripgrep.enable = true;

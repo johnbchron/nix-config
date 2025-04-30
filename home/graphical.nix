@@ -37,7 +37,6 @@
 
     # network
     qbittorrent
-    # protonvpn-gui
 
     # gnome stuff
     gnome-tweaks
