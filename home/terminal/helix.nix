@@ -1,5 +1,4 @@
-{ pkgs, ... }: let
-in {
+{ pkgs, ... }: {
   programs.helix = {
     enable = true;
    
@@ -101,8 +100,12 @@ in {
             # procMacro.ignored = { leptos-macro = "server"; };
           };
         };
-        nixd = {
-          command = "${pkgs.nixd}/bin/nixd";
+        # nixd = {
+        #   command = "${pkgs.nixd}/bin/nixd";
+        # };
+        nil = {
+          command = "${pkgs.nil}/bin/nil";
+          config.nil.nix.flake.autoEvalInputs = true;
         };
         harper = {
           command = "${pkgs.harper}/bin/harper-ls";
@@ -121,7 +124,7 @@ in {
         }
         {
           name = "nix";
-          language-servers = [ "nixd" ];
+          language-servers = [ "nil" ];
         }
         {
           name = "wgsl";

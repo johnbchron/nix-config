@@ -15,11 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    scribe = {
-      url = "github:johnbchron/scribe";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    tikv-explorer.url = "github:johnbchron/tikv-explorer";
     alacritty-theme = {
       url = "github:alacritty/alacritty-theme";
       flake = false;
