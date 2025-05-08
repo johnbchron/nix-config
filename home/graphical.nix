@@ -12,9 +12,6 @@
     firefox
     ungoogled-chromium
 
-    # first-party overlay-supplied apps
-    tikv-explorer
-  
     # other apps
     anki # flashcards
     obsidian # notes & stuff
