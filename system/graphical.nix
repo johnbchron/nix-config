@@ -82,9 +82,9 @@
   services.usbmuxd.enable = true;
 
   services.gnome.gnome-keyring.enable = true;
-  services.protonmail-bridge = {
-    enable = true;
-    logLevel = "debug";
-    path = with pkgs; [ pass gnome-keyring libnotify ];
-  };
+  # services.protonmail-bridge = {
+  #   enable = true;
+  #   logLevel = "debug";
+  #   path = with pkgs; [ pass gnome-keyring libnotify ];
+  # };
 }
