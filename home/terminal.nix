@@ -8,6 +8,7 @@
 
   home.packages = with pkgs; [
     # basic shell utils
+    uutils-coreutils-noprefix
     just file fzf gitoxide
 
     # archives
