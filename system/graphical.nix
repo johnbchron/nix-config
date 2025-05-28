@@ -40,19 +40,17 @@
         inherit system;
         overlays = [ (import ../extra/iosevka-overlay.nix) ];
       };
-    in [
-      # pull in the customized iosevka packages from the pinned nixpkgs
-      (final: prev: {
+      iosevka-overlay = final: prev: {
         inherit (iosevka-pin-pkgs) iosevka-custom iosevka-term-custom;
-      })
-      # tikv-explorer wrapper
-      (final: prev: let 
-        tikv-explorer-wrapped = (pkgs.writeShellScriptBin "tikv-explorer" ''
+      };
+      tikv-explorer-overlay = final: prev: {
+        tikv-explorer = prev.writeShellScriptBin "tikv-explorer" ''
           ${tikv-explorer.packages."${system}".server}/bin/site-server "$@"
-        '');
-      in {
-        tikv-explorer = tikv-explorer-wrapped;
-      })
+        '';
+      };
+    in [
+      iosevka-overlay
+      tikv-explorer-overlay
     ];
   };
 
@@ -70,6 +68,8 @@
 
     iosevka-custom
     iosevka-term-custom
+
+    ia-writer-quattro ia-writer-duospace
 
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
