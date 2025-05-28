@@ -105,7 +105,7 @@
         # };
         nil = {
           command = "${pkgs.nil}/bin/nil";
-          config.nil.nix.flake.autoEvalInputs = true;
+          # config.nil.nix.flake.autoEvalInputs = true;
         };
         harper = {
           command = "${pkgs.harper}/bin/harper-ls";
