@@ -33,8 +33,12 @@
   networking = {
     networkmanager.enable = true;
     hostName = "gimli";
-    # for viewing local development from mobile
-    firewall.allowedTCPPorts = [ 3000 ];
+    firewall.allowedTCPPorts = [
+      # for viewing local development from mobile
+      3000
+      # minecraft local lan
+      50000
+    ];
     nameservers = [
       # # google
       # "2001:4860:4860::8888"

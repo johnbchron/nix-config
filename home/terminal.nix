@@ -17,8 +17,8 @@
     # http & friends
     curl wget jq
 
-    # runs nixpkgs items
-    comma
+    # extra nix helpers
+    comma nix-tree
 
     # networking
     nmap

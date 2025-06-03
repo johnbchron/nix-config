@@ -4,7 +4,7 @@
     ./graphical/dconf.nix
     # ./graphical/hyprland.nix
     # ./graphical/niri.nix
-    ./graphical/wezterm.nix
+    # ./graphical/wezterm.nix
   ];
 
   home.packages = with pkgs; [
