@@ -25,7 +25,7 @@
       ui = {
         default-command = [ "log" ];
 
-        diff.tool = ["${pkgs.difftastic}/bin/difft" "--color=always" "$left" "$right"];
+        diff-formatter = ["${pkgs.difftastic}/bin/difft" "--color=always" "$left" "$right"];
       };
     };
   };
