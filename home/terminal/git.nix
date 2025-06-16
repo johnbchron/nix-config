@@ -41,6 +41,8 @@
       key = "0x89C8A7794A74A0AB";
     };
 
+    lfs.enable = true;
+
     extraConfig = {
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
