@@ -5,9 +5,8 @@
     iosevka-pin.url = "github:NixOS/nixpkgs?rev=f675531bc7e6657c10a18b565cfebd8aa9e24c14";
 
     apple-silicon-support = {
-      # url = "github:tpwrules/nixos-apple-silicon";
-      # url = "github:schphe/nixos-apple-silicon";
-      url = "github:kitten/nixos-apple-silicon/edge";
+      url = "github:nix-community/nixos-apple-silicon";
+      # url = "github:kitten/nixos-apple-silicon/edge";
     };
 
     home-manager = {
