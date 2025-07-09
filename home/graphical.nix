@@ -31,6 +31,7 @@
 
     # games
     mars
+    prismlauncher
 
     # network
     qbittorrent
@@ -38,6 +39,9 @@
     # gnome stuff
     gnome-tweaks
     gnomeExtensions.just-perfection
+
+    # audio
+    pulseaudio
   ];
 
   gtk = {

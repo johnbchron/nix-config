@@ -19,6 +19,8 @@
       url = "github:alacritty/alacritty-theme";
       flake = false;
     };
+
+    jj-watch.url = "github:johnbchron/jj-watch";
   };
 
   outputs = { nixpkgs, apple-silicon-support, home-manager, ... } @ inputs: let

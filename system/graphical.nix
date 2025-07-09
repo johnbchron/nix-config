@@ -1,4 +1,4 @@
-{ pkgs, tikv-explorer, iosevka-pin, system, ... }: {
+{ pkgs, tikv-explorer, iosevka-pin, jj-watch, system, ... }: {
   # xserver
   services.xserver = {
     enable = true;
@@ -48,9 +48,13 @@
           ${tikv-explorer.packages."${system}".server}/bin/site-server "$@"
         '';
       };
+      jj-watch-overlay = final: prev: {
+        jj-watch = jj-watch.packages."${system}".jj-watch;
+      };
     in [
       iosevka-overlay
       tikv-explorer-overlay
+      jj-watch-overlay
     ];
   };
 

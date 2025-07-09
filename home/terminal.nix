@@ -34,6 +34,7 @@
     distrobox
 
     # misc
+    jj-watch
     sl # steam locomotive
     typer # typing test
     cfspeedtest # for testing network speed
