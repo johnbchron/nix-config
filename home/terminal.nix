@@ -35,6 +35,7 @@
 
     # misc
     jj-watch
+    protonvpn-cli_2
     sl # steam locomotive
     typer # typing test
     cfspeedtest # for testing network speed
