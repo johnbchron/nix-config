@@ -79,7 +79,6 @@
       language-server = {
         rust-analyzer = {
           config = {
-            # assist.termSearch.fuel = 1800;
             check = {
               command = "clippy";
               features = "all";
@@ -93,24 +92,39 @@
 
             inlayHints = {
               closureCaptureHints.enable = true;
-              # implicitDrops.enable = true;
               maxLength = 20;
             };
-
-            # procMacro.ignored = { leptos-macro = "server"; };
           };
         };
-        # nixd = {
-        #   command = "${pkgs.nixd}/bin/nixd";
-        # };
         nil = {
           command = "${pkgs.nil}/bin/nil";
-          # config.nil.nix.flake.autoEvalInputs = true;
         };
         harper = {
           command = "${pkgs.harper}/bin/harper-ls";
           args = [ "--stdio" ];
         };
+
+        # lsp-ai = {
+        #   command = "${pkgs.lsp-ai}/bin/lsp-ai";
+        #   config = {
+        #     memory = {
+        #       file_store = {};
+        #     };
+        #     models = {
+        #       model1 = {
+        #         type = "ollama";
+        #         model = "deepseek-coder";
+        #       };
+        #     };
+        #     completion = {
+        #       model = "model1";
+        #       parameters = {
+        #         max_context = 2000;
+        #         max_tokens = 32;
+        #       };
+        #     };
+        #   };
+        # };
       };
 
       language = [
@@ -121,6 +135,7 @@
             command = "cargo fmt";
           };
           indent = { tab-width = 2; unit = "  "; };
+          # language-servers = [ "rust-analyzer" "lsp-ai" ];
         }
         {
           name = "nix";
