@@ -122,17 +122,17 @@
     },
     "iosevka-pin": {
       "locked": {
-        "lastModified": 1744232761,
-        "narHash": "sha256-gbl9hE39nQRpZaLjhWKmEu5ejtQsgI5TWYrIVVJn30U=",
+        "lastModified": 1754253215,
+        "narHash": "sha256-qPC74Ivh9YySUhzA9znE8zODrzunXG4Aqa66RJ7pAao=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "f675531bc7e6657c10a18b565cfebd8aa9e24c14",
+        "rev": "77a52192a7502c2385027651c81d269cb106dbde",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "f675531bc7e6657c10a18b565cfebd8aa9e24c14",
+        "rev": "77a52192a7502c2385027651c81d269cb106dbde",
         "type": "github"
       }
     },

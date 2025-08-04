@@ -1,5 +1,17 @@
 
 super: prev: let
+  design-common = {
+    braille-dot = "square";
+
+    asterisk = "turn-hex-high";
+    brace = "curly";
+    guillemet = "curly";
+    question = "smooth";
+
+    lig-equal-chain = "without-notch";
+    lig-hyphen-chain = "without-notch";
+  };
+  
   consolas-based = {
     inherits = "ss03";
     design = {
@@ -14,20 +26,7 @@ super: prev: let
 
       six = "straight-bar";
       nine = "straight-bar";
-
-      # punctuation-dot = "round";
-      asterisk = "turn-hex-high";
-      # underscore = "low";
-      brace = "curly";
-      guillemet = "curly";
-      # ampersand = "closed";
-      question = "smooth";
-      # micro-sign = "tailed-serifless";
-
-      lig-equal-chain = "without-notch";
-      lig-hyphen-chain = "without-notch";
-      # lig-double-arrow-bar = "without-notch";
-    };
+    } // design-common;
   };
 
   anonymous-pro-based = {
@@ -39,16 +38,7 @@ super: prev: let
       c = "serifless";
       f = "flat-hook-serifless-crossbar-at-x-height";
       r = "top-serifed";
-    
-      asterisk = "turn-hex-high";
-      brace = "curly";
-      question = "smooth";
-      
-      braille-dot = "square";
-
-      lig-equal-chain = "without-notch";
-      lig-hyphen-chain = "without-notch";
-    };
+    } // design-common;
   };
 
   menlo-based = {
@@ -60,15 +50,7 @@ super: prev: let
       l = "serifed";
       q = "diagonal-tailed-serifless";
       t = "flat-hook";
-    
-      braille-dot = "square";
-
-      asterisk = "turn-hex-high";
-      brace = "curly";
-
-      lig-equal-chain = "without-notch";
-      lig-hyphen-chain = "without-notch";
-    };
+    } // design-common;
   };
 
   buildPlan = {
