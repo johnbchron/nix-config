@@ -208,12 +208,12 @@
       default_layout = "compact";
       session_serialization = false;
       show_startup_tips = false;
-      # mouse_mode = false;
       ui = {
         pane_frames = {
           rounded_corners = true;
         };
       };
+      advanced_mouse_actions = false;
     };
   };
 }
