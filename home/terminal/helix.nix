@@ -112,15 +112,24 @@
         #     };
         #     models = {
         #       model1 = {
-        #         type = "ollama";
-        #         model = "deepseek-coder";
+        #         type = "anthropic";
+        #         chat_endpoint = "https://api.x.ai/v1/messages";
+        #         model = "grok-3-mini";
+        #         auth_token_env_var_name = "XAI_API_KEY";
         #       };
         #     };
         #     completion = {
         #       model = "model1";
         #       parameters = {
-        #         max_context = 2000;
-        #         max_tokens = 32;
+        #         max_context = 2048;
+        #         max_tokens = 2048;
+        #         messages = [
+        #           {
+        #             role = "user";
+        #             content = "{CODE}";
+        #           }
+        #         ];
+        #         system = "Instructions:\n- You are an AI programming assistant.\n- Given a piece of code with the cursor location marked by \"<CURSOR>\", replace \"<CURSOR>\" with the correct code or comment.\n- First, think step-by-step.\n- Describe your plan for what to build in pseudocode, written out in great detail.\n- Then output the code replacing the \"<CURSOR>\"\n- Ensure that your completion fits within the language context of the provided code snippet (e.g., Python, JavaScript, Rust).\n\nRules:\n- Only respond with code or comments.\n- Only replace \"<CURSOR>\"; do not include any previously written code.\n- Never include \"<CURSOR>\" in your response\n- If the cursor is within a comment, complete the comment meaningfully.\n- Handle ambiguous cases by providing the most contextually appropriate completion.\n- Be consistent with your responses.";
         #       };
         #     };
         #   };

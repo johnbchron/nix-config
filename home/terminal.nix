@@ -112,6 +112,7 @@
   programs.spotify-player = {
     enable = true;
     settings = {
+      client_id = "23e6643f44fe407b9cdc74b6274c9fb5";
       device = {
         name = "gimli-splayer";
         device_type = "computer";

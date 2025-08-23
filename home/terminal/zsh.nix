@@ -31,6 +31,10 @@
     syntaxHighlighting = {
       enable = true;
     };
+
+    initContent = ''
+      export XAI_API_KEY=$(cat /home/jlewis/keys/grok-api-key)
+    '';
   };
 
   # nix-shell custom zsh plugin
