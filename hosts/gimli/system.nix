@@ -50,9 +50,4 @@
     ifuse
     libimobiledevice
   ];
-
-  environment.variables = {
-    # bc gl is weird on this machine
-    "GLOBAL_LIBGL" = "${pkgs.lib.makeLibraryPath [ pkgs.libGL ]}";
-  };
 }
