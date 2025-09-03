@@ -19,8 +19,8 @@
   # asahi
   hardware.asahi = {
     # withRust = true;
-    useExperimentalGPUDriver = true;
-    experimentalGPUInstallMode = "replace";
+    # useExperimentalGPUDriver = true;
+    # experimentalGPUInstallMode = "replace";
     setupAsahiSound = true;
     # extractPeripheralFirmware = false;
   };
