@@ -1,6 +1,6 @@
 
 rebuild-switch:
-    sudo nixos-rebuild switch --flake '/home/jlewis/nix-config#' --impure
+    sudo nixos-rebuild switch --flake .#
 
 update:
     nix flake update

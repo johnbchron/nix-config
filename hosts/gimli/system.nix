@@ -22,6 +22,7 @@
     # useExperimentalGPUDriver = true;
     # experimentalGPUInstallMode = "replace";
     setupAsahiSound = true;
+    peripheralFirmwareDirectory = ../../firmware;
     # extractPeripheralFirmware = false;
   };
 
