@@ -106,7 +106,7 @@
     openFirewall = true;
   };
 
-  services.tailscale.enable = true;
+  # services.tailscale.enable = true;
   services.ollama.enable = true;
 
   # services.peroxide = {
