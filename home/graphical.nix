@@ -8,8 +8,7 @@
   ];
 
   home.packages = with pkgs; [
-    floorp
-    firefox
+    floorp-bin
     ungoogled-chromium
 
     # other apps
