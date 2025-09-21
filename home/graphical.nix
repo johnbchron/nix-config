@@ -27,6 +27,7 @@
     inkscape # vector editing
     dconf-editor # dconf obv
     signal-desktop # messaging
+    prusa-slicer # 3d printing
 
     # games
     mars

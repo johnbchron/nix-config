@@ -40,6 +40,8 @@
     typer # typing test
     cfspeedtest # for testing network speed
     fastfetch # rip neofetch :(
+
+    spotify-player
   ];
 
   # shell history
@@ -108,24 +110,25 @@
   # replacement for `grep`
   programs.ripgrep.enable = true;
 
-  # spotify
-  programs.spotify-player = {
-    enable = true;
-    settings = {
-      client_id = "23e6643f44fe407b9cdc74b6274c9fb5";
-      device = {
-        name = "gimli-splayer";
-        device_type = "computer";
-        volume = 100;
-        bitrate = 320;
-        audio_cache = true;
-        normalization = true;
-      };
-      # customized weirdly because of iosevka
-      cover_img_length = 12;
-      cover_img_width = 5;
-    };
-  };
+  # just add as a program now
+  # # spotify
+  # programs.spotify-player = {
+  #   enable = true;
+  #   settings = {
+  #     client_id = "23e6643f44fe407b9cdc74b6274c9fb5";
+  #     device = {
+  #       name = "gimli-splayer";
+  #       device_type = "computer";
+  #       volume = 100;
+  #       bitrate = 320;
+  #       audio_cache = true;
+  #       normalization = true;
+  #     };
+  #     # customized weirdly because of iosevka
+  #     cover_img_length = 12;
+  #     cover_img_width = 5;
+  #   };
+  # };
 
   # extra fancy shell prompt
   programs.starship = {
